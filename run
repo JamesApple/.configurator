@@ -1,0 +1,3 @@
+#!/usr/local/bin/ruby
+require_relative '.source/config_composer'
+
