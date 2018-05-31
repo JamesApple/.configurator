@@ -38,7 +38,7 @@ class ConfigFile
   end
 
   def component_paths
-    `cd #{@path} && ls`
+    `cd #{@path} && ls -A`
       .split("\n")
       .map { |file| File.join @path, file }
   end

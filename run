@@ -1,3 +1,5 @@
-#!/usr/local/bin/ruby
-require_relative '.source/config_composer'
+#!/bin/bash
+##!/usr/local/bin/ruby
+cd ~/configurator && ruby ./.source/config_composer.rb
+# require_relative '.source/config_composer'
 
