@@ -1,4 +1,6 @@
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT=/usr/local/var/pyenv
 # =============================================================================
 #                                    Aliases
 # =============================================================================
@@ -78,7 +80,6 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
     alias nvim='echo "No nesting!"'
   fi
 fi
-
 
 
 
