@@ -114,7 +114,7 @@ nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 nmap <silent> // :nohlsearch<CR>
 
 "(v)im (r)eload
-nmap <silent> <leader>vc :! cd ~/configurator && ./run<CR>:so $MYVIMRC<CR>
+nmap <silent> <leader>vc :! cd ~/configurator && ./configurator<CR>:so $MYVIMRC<CR>
 nmap <silent> <leader>vr :so $MYVIMRC<CR>
 
 " Invert mark jumping keys
