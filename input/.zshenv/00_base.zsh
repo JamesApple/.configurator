@@ -67,6 +67,11 @@ alias irb="pry"
 alias v='f -e vim'
 
 
+# PATH="/Users/jamesapple/Library/Python/3.6/bin:${PATH}"
+# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+# export PATH
+
+
 
 alias e="$EDITOR"
 export VISUAL=nvim
