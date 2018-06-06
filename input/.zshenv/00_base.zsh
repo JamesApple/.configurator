@@ -1,6 +1,9 @@
+
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT=/usr/local/var/pyenv
 
 alias g='git'
 
