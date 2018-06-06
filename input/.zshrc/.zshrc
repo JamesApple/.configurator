@@ -2,7 +2,6 @@ source ~/.zplug/init.zsh
 
 zplug "b4b4r07/enhancd", use:init.sh
 
-
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -28,8 +27,7 @@ if zplug check zsh-users/zsh-autosuggestions; then
     ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-substring-search-up history-substring-search-down)
     ZSH_AUTOSUGGEST_CLEAR_WIDGETS=("${(@)ZSH_AUTOSUGGEST_CLEAR_WIDGETS:#(up|down)-line-or-history}")
 fi
-# KEYTIMEOUT=1
-# bindkey -v
+
 
 if zplug check zsh-users/zsh-history-substring-search; then
   bindkey '\eOA' history-substring-search-up # or ^[OA
@@ -37,24 +35,11 @@ if zplug check zsh-users/zsh-history-substring-search; then
 fi
 
 ## =============================================================================
-##                                   Variables
-## =============================================================================
-#TERM="xterm-256color"
-#export LANG="en_US.UTF-8"
-#export LC_ALL="en_US.UTF-8"
-#source ~/.zplug/init.zsh
-#source ~/.zshenv
-
-## =============================================================================
 ##                                   Zplugins
 ## =============================================================================
 ## https://github.com/zplug/zplug
 ## to enable fzy search
 
-#zplug "zsh-users/zsh-completions"
-#zplug "zsh-users/zsh-autosuggestions"
-#zplug "zsh-users/zsh-history-substring-search"
-#zplug "zsh-users/zsh-syntax-highlighting", defer:2
 ## zplug "plugins/git", from:oh-my-zsh
 #zplug "plugins/command-not-found", from:oh-my-zsh
 #zplug "plugins/colored-man-pages", from:oh-my-zsh

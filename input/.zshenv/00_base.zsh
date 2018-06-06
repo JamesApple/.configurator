@@ -1,9 +1,7 @@
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-export PYENV_ROOT=/usr/local/var/pyenv
-# =============================================================================
-#                                    Aliases
-# =============================================================================
+
 alias g='git'
 
 # Next highest folder with .git
@@ -66,13 +64,6 @@ alias irb="pry"
 # Vim
 alias v='f -e vim'
 
-
-# PATH="/Users/jamesapple/Library/Python/3.6/bin:${PATH}"
-# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-# export PATH
-
-
-
 alias e="$EDITOR"
 export VISUAL=nvim
 export EDITOR=nvim
@@ -80,15 +71,6 @@ export BROWSER=google-chrome
 # Use Nvim
 alias vim=nvim
 alias vi=nvim
-
-# jump to recently used items
-alias a='fasd -a' # any
-alias s='fasd -si' # show / search / select
-alias d='fasd -d' # directory
-alias f='fasd -f' # file
-alias z='fasd_cd -d' # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # interactive directory jump
-
 
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then
@@ -99,24 +81,4 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
 fi
 
 
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jamesapple/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jamesapple/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jamesapple/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jamesapple/google-cloud-sdk/completion.zsh.inc'; fi
-
-
-PATH="/Users/jamesapple/Library/Python/3.6/bin:${PATH}"
-# PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-
-export PATH
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
