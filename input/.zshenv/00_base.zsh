@@ -53,24 +53,20 @@ alias get='curl --continue-at - --location --progress-bar --remote-name'
 alias mkdir='nocorrect mkdir -p'
 alias mv='nocorrect mv -i'
 
-alias tf='tail -f'
 alias -g G='| grep --color'
 alias grep='() { $(whence -p grep) --color=auto $@ }'
 alias egrep='() { $(whence -p egrep) --color=auto $@ }'
 
-# Ruby
+
 alias irb="pry"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+export BROWSER=chrome
 
-# Vim
-alias v='f -e vim'
-
-alias e="$EDITOR"
 export VISUAL=nvim
 export EDITOR=nvim
-export BROWSER=google-chrome
-# Use Nvim
-alias vim=nvim
-alias vi=nvim
+alias e="$EDITOR"
+alias vim="$EDITOR"
+alias vi="$EDITOR"
 
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   if [ -x "$(command -v nvr)" ]; then

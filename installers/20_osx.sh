@@ -10,3 +10,5 @@ defaults write com.apple.screencapture type -string “png”
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=” “
+# Enable press and hold for Oni IDE
+defaults write com.extropy.oni ApplePressAndHoldEnabled -bool false
