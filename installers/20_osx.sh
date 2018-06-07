@@ -12,3 +12,10 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 sudo nvram SystemAudioVolume=” “
 # Enable press and hold for Oni IDE
 defaults write com.extropy.oni ApplePressAndHoldEnabled -bool false
+
+dockutil --remove all --allhomes
+dockutil --add /Applications/Google\ Chrome.app --allhomes
+dockutil --add /Applications/iTerm.app --allhomes
+
+
+defaults write com.apple.screencapture location ~/Downloads

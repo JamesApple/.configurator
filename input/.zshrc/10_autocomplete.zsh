@@ -1,6 +1,5 @@
 
 if [[ "$TERM" != 'dumb' ]]; then
-  echo 'complete setup'
 
   setopt COMPLETE_ALIASES
   setopt COMPLETE_IN_WORD    # Complete from both ends of a word.

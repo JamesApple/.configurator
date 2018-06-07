@@ -10,12 +10,23 @@ brew install \
   wget \
   neovim \
   gpg2 \
+  coreutils \
+  findutils \
+  wget \
+  curl \
 
 brew cask install \
   google-chrome \
   spotify \
   vlc \
   alfred \
-  dash
-
+  dash \
+  docker \
+  virtualbox \
+  vagrant \
+  timing \
+  iterm2 \
+  spotify \
+  timing \
+  slack
 

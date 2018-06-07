@@ -1,4 +1,3 @@
-
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
@@ -44,6 +43,9 @@ alias lr='ls -lhR'           # Recursive ls.
 alias sl='ls'                # I often screw this up.
 alias la='ls -A'
 alias ll='ls -l'
+
+alias c='clear'
+alias serve='python -m SimpleHttpServer'
 
 # Paste
 alias pbc='pbcopy'

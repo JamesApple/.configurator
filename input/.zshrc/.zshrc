@@ -34,6 +34,15 @@ if zplug check zsh-users/zsh-history-substring-search; then
   bindkey '\eOB' history-substring-search-down # or ^[OB
 fi
 
+
+
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
+
+
+
+
 ## =============================================================================
 ##                                   Zplugins
 ## =============================================================================
@@ -147,10 +156,6 @@ unsetopt listbeep
 #zplug load # --verbose
 
 
-## Suggestions
-#if zplug check "zsh-users/zsh-autosuggestions"; then
-#fi
-
 
 ## Syntax Highlighting
 #if zplug check "zsh-users/zsh-syntax-highlighting"; then
@@ -187,7 +192,3 @@ unsetopt listbeep
 
 
 ## Cheeky unorganized thing
-#autoload -U edit-command-line
-#zle -N edit-command-line
-#bindkey '^x^e' edit-command-line
-
