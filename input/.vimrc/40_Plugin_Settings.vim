@@ -91,15 +91,20 @@ let g:ctrlp_reuse_window = 'netrw\|dirvish'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_match_window = 'bottom,order:btt,min:0,max:10,results:50'
 let g:ctrlp_tabpage_position = 'al'
+let g:ctrlp_lazy_update = 250
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$'
+  \ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-if executable('ag')
-  let g:ctrlp_user_command =
-        \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
-  let g:ctrlp_use_caching = 0
-else
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-endif
+" if executable('ag')
+"   let g:ctrlp_user_command =
+"         \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+"   let g:ctrlp_use_caching = 0
+" else
+"   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+" endif
 
 
 

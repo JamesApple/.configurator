@@ -11,6 +11,24 @@ augroup dirvish_config
         \| nnoremap <buffer> em :Shdo! mv {}<CR>
 augroup END
 
+" Move around windows
+nnoremap <C-Tab> <C-w>w
+nnoremap <C-S-Tab> <C-w>W
+
+" Backspace to move back in jumps and tab to move forward
+nnoremap <Backspace> <C-O>
+
+nnoremap <leader><Backspace> <C-^>
+
+" Replace within block
+nnoremap <leader><leader> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
+xnoremap <leader><leader> y:'{,'}s/<c-r><c-0>//g<left><left>
+" Replace in entire file
+nnoremap <leader>s :%s/\<<c-r><c-w>\>//g<left><left>
+xnoremap <leader>s y:%s/<c-r><c-0>//g<left><left>
+
+nnoremap <silent><leader> :w<CR>
+
 " Indent entire file using mark
 nnoremap == mzgg=G`z
 
@@ -80,12 +98,12 @@ nnoremap <silent><leader>sp :CtrlPBookmarkDir<CR>
 nnoremap <silent><leader>sb :CtrlPBuffer<CR>
 nnoremap <silent><leader>pa :CtrlPBookmarkDirAdd .<CR>
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtDeleteEnt()': ['<F7>', '<C-r>'],
-  \ 'PrtSelectMove("u")':   ['<c-f>','<PageUp>', '<kPageUp>'],
-  \ 'PrtSelectMove("d")':   ['<c-b>','<PageDown>', '<kPageDown>'],
-  \ 'MarkToOpen()':         ['<c-z>', '<c-x>'],
-  \ 'AcceptSelection("h")': ['<c-cr>', '<c-s>'],
-  \ }
+      \ 'PrtDeleteEnt()': ['<F7>', '<C-r>'],
+      \ 'PrtSelectMove("u")':   ['<c-f>','<PageUp>', '<kPageUp>'],
+      \ 'PrtSelectMove("d")':   ['<c-b>','<PageDown>', '<kPageDown>'],
+      \ 'MarkToOpen()':         ['<c-z>', '<c-x>'],
+      \ 'AcceptSelection("h")': ['<c-cr>', '<c-s>'],
+      \ }
 
 " Ale
 nnoremap <silent><leader>f :ALEFix<CR>

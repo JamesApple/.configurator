@@ -6,7 +6,7 @@ if [ -f '/Users/jamesapple/google-cloud-sdk/path.zsh.inc' ]; then source '/Users
 if [ -f '/Users/jamesapple/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jamesapple/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-PATH="/Users/jamesapple/Library/Python/3.6/bin:${PATH}"
+# PATH="/Users/jamesapple/Library/Python/3.6/bin:${PATH}"
 # PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 
 export PATH
