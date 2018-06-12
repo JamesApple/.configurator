@@ -1,48 +1,49 @@
-" set modifiable
-" If you want to learn more about these settings, type :h <OPTION NAME>
+set clipboard=unnamed,unnamedplus
+set ruler 
+set number " Display line numbers
+set noswapfile " Disable using *.swp
 
-if has("persistent_undo")
-  set undodir=~/.undodir/
-  set undofile
-endif
+set diffopt=filler,vertical " default behavior for diff
 
-" Window / Pane
-set noequalalways
+set noequalalways "
+set virtualedit=onemore " Allow cursor to move just past the end of a line
+set path=$PWD/** " Add all folders in root to path
+set scrolloff=999 " Keep cursor in middle of screen
 
-" File Navigation
-set path=$PWD/**
+set showtabline=2  " Always show tabline
+set laststatus=2  " Always show statusline
 
-" Navbar
-set showtabline=2
-set laststatus=2
+set mouse= " Disable mouse for everything
 
-" Mouse
-set mouse=a
-
-" Buffers
-set hidden
 set autoread
-set noswapfile
 set directory=~/.vimtmp
 set confirm
+set hidden " Hide buffers instead of deleting
 
 " Commands / Hotkeys
-set showcmd
-set notimeout ttimeout ttimeoutlen=100
-set wildchar=<Tab> wildmenu wildmode=full
+set showcmd " Always show current command
+set notimeout 
+set ttimeout 
+set ttimeoutlen=100
+set wildmenu
+set wildchar=<Tab>
+set wildmode=
+      \list:longest,
+      \full
 
-" Misc
-
-" Display
-set nowrap
-set list
-set listchars=tab:>-,trail:•,extends:>
+set nowrap     " Disable wrapping by default
+set list       " Show hidden chars
+set listchars=
+  \tab:•·,     " Use these characters to mimic hidden characters
+  \trail:·,
+  \extends:❯,
+  \precedes:❮,
+  \nbsp:× 
+set lazyredraw " Speed up on larger files
 
 
 " Themeing
 syntax enable
-set ruler
-set number
 set visualbell
 set background=dark
 colorscheme solarized
@@ -50,8 +51,8 @@ color solarized
 highlight clear SignColumn
 
 " Folding
-set foldopen=undo,tag,insert,jump,mark,percent,search
-set foldmethod=indent
+set foldopen=undo,tag,insert,jump,mark,percent,search " Only open folds intentionally
+set foldmethod=indent                                 " Always fold on indents
 
 " Search
 set hlsearch
@@ -67,10 +68,10 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set clipboard=unnamed
 
 " Indents
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set autoindent
+set expandtab " Replace tab with spaces
+set shiftwidth=2 " Indent size for << and >>
+set softtabstop=2 " Remove tab symbols as if they were spaces
+set smartindent " Automagically add smart indents after a break
 
 " Completion
 set complete=.,w,b,u,t
