@@ -73,7 +73,7 @@ set softtabstop=2
 set autoindent
 
 " Completion
-set complete=.,w,b,u,t,i
+set complete=.,w,b,u,t
 set omnifunc=syntaxcomplete#Complete
 
 " Let delete any character

@@ -1,14 +1,9 @@
-"---You have to install vundle manually into /.vim/bundle/Vundle.vim------
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
 " --- Session Persistence ---
 Plugin 'tpope/vim-obsession'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
+
+" -- FZF --
 
 " --- Languages ---
 Plugin 'sheerun/vim-polyglot'
@@ -21,10 +16,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'andreimaxim/vim-io'
 
+
+
 " --- External Integrations ---
-Plugin 'tpope/vim-fugitive'
-Plugin 'rking/ag.vim'
-Plugin 'skwp/greplace.vim'
+" Plugin 'rking/ag.vim'
+" Plugin 'skwp/greplace.vim'
 
 " --- Autocomplete / Generation ---
 " Plugin 'Valloric/YouCompleteMe'
@@ -52,12 +48,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'google/vim-searchindex'
 
 " --- File Navigation ---
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'justinmk/vim-dirvish'
 
 " --- Text Navigation ---
 Plugin 'tpope/vim-unimpaired'
-Plugin 'justinmk/vim-sneak'
 
 " --- Misc ---
 Plugin 'editorconfig/editorconfig-vim'
@@ -65,5 +60,3 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 
 " --- More plumbing for Vundle ---
-call vundle#end()            " required
-filetype plugin indent on    " required

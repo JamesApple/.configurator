@@ -91,34 +91,10 @@ endfunction
 " Undo Tree
 nmap <leader>u :UndotreeToggle<CR>
 
-" Ctrl P
-let g:ctrlp_map='<leader>sf'
-nnoremap <silent><leader>st :CtrlPTag<CR>
-nnoremap <silent><leader>sp :CtrlPBookmarkDir<CR>
-nnoremap <silent><leader>sb :CtrlPBuffer<CR>
-nnoremap <silent><leader>pa :CtrlPBookmarkDirAdd .<CR>
-let g:ctrlp_prompt_mappings = {
-      \ 'PrtDeleteEnt()': ['<F7>', '<C-r>'],
-      \ 'PrtSelectMove("u")':   ['<c-f>','<PageUp>', '<kPageUp>'],
-      \ 'PrtSelectMove("d")':   ['<c-b>','<PageDown>', '<kPageDown>'],
-      \ 'MarkToOpen()':         ['<c-z>', '<c-x>'],
-      \ 'AcceptSelection("h")': ['<c-cr>', '<c-s>'],
-      \ }
-
 " Ale
 nnoremap <silent><leader>f :ALEFix<CR>
 
 let g:user_emmet_leader_key='<C-e>'
-
-" Project file searching (g)rep - (g)et / (f)ile / (/)search
-nmap <leader>gr :Ag ""<Left>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gm :Gmerge 
-nnoremap <leader>gf :Gfetch
-nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gd :Gvdiff
-nnoremap <leader>gb :Gblame<CR>
 
 " nmap <leader>gf :AgFile ""<Left>
 " nnoremap <silent> <leader>g/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>

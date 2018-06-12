@@ -1,4 +1,7 @@
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if [[ "$TERM" != 'dumb' ]]; then
 
   setopt COMPLETE_ALIASES
