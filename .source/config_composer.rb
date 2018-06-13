@@ -34,6 +34,7 @@ class ConfigComposer
       .keep_if { |listing| listing.include? '/' }
       .map { |directory| directory.chop }
       .map { |d| File.join path, d }
+    p directories
     return [] if directories.empty?
     directories + directories
       .map { |d| directories_in d }

@@ -1,6 +1,36 @@
 
 let mapleader = " "
 
+" Keep search results in center of screen
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+
+" Delete all hidden buffers
+nnoremap <silent> <Leader><BS>b :call DeleteHiddenBuffers()<CR>
+function! DeleteHiddenBuffers() " {{{
+  let tpbl=[]
+  call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+  for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+    silent execute 'bwipeout' buf
+  endfor
+endfunction " }}}
+
+" Swap between tabs
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
+nmap <leader>6 6gt
+nmap <leader>7 7gt
+nmap <leader>8 8gt
+nmap <leader>9 9gt
+
 " Move around windows
 nnoremap <C-Tab> <C-w>w
 nnoremap <C-S-Tab> <C-w>W
@@ -59,12 +89,15 @@ function! ToggleTodo()
   endif
 endfunction
 
-
-
-
 " Toggle (q)uickfix and (l)ocation list
 nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+" Close quickfix with q
+augroup quickFixSettings
+  autocmd!
+  autocmd FileType qf
+        \ nnoremap <buffer> <silent> q :close<CR>
+augroup END
 
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>

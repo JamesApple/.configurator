@@ -4,7 +4,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'google/vim-searchindex' " Adds search numbers
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'AndrewRadev/splitjoin.vim' " gJ gS to split and join expressions
@@ -22,3 +21,7 @@ Plugin 'tpope/vim-abolish'
 " crm MixedCase
 " crc camelCase
 " :Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}  {despe,sepa}rat{}
+
+" Color Schemes
+Plugin 'ajmwagar/vim-deus'
+" Plugin 'altercation/vim-colors-solarized'

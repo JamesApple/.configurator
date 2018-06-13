@@ -1,7 +1,6 @@
 source ~/.zplug/init.zsh
 
 zplug "b4b4r07/enhancd", use:init.sh
-
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"

@@ -1,15 +1,17 @@
+" Misc
 set clipboard=unnamed,unnamedplus
-set noswapfile              " Disable using *.swp
-set diffopt=filler,vertical " default behavior for diff
-set noequalalways           " Don't equalize windows when I change a window
-set path=$PWD/**            " Add all folders in root to path
-set showtabline=2           " Always show tabline
-set laststatus=2            " Always show statusline
-set mouse=                  " Disable mouse for everything
-set hidden                  " Hide buffers instead of deleting
-set autoread                " Always read from a file when it has been changed externally
-set directory=~/.vimtmp     " Create global swp file in .vimtmp
-set confirm                 " Failed commands will ask permission occasionally
+set noswapfile                 " Disable using *.swp
+set diffopt=filler,vertical    " default behavior for diff
+set noequalalways              " Don't equalize windows when I change a window
+set path=$PWD/**               " Add all folders in root to path
+set showtabline=2              " Always show tabline
+set laststatus=2               " Always show statusline
+set mouse=                     " Disable mouse for everything
+set hidden                     " Hide buffers instead of deleting
+set autoread                   " Always read from a file when it has been changed externally
+set directory=~/.vimtmp        " Create global swp file in .vimtmp
+set confirm                    " Failed commands will ask permission occasionally
+set backspace=indent,eol,start " Backspace deletes any character
 
 " Ex commands
 set showcmd        " Always show current command
@@ -29,13 +31,8 @@ set listchars= " Use these characters to mimic hidden characters
   \precedes:❮,
   \nbsp:× 
 
-" Themeing
-syntax enable
+" Misc Visual
 set visualbell
-set background=dark
-colorscheme solarized
-color solarized
-highlight clear SignColumn
 set nowrap     " Disable wrapping by default
 set number     " Display line numbers
 set lazyredraw " Speed up on larger files
@@ -73,6 +70,4 @@ set smartindent   " Automagically add smart indents after a break
 set complete=.,w,b,u,t
 set omnifunc=syntaxcomplete#Complete
 
-" Let delete any character
-set backspace=indent,eol,start
 

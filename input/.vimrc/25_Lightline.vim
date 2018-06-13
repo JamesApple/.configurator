@@ -1,9 +1,10 @@
 Plugin 'itchyny/lightline.vim'
 " Plugin 'mgee/lightline-bufferline'
+Plugin 'ajmwagar/lightline-deus'
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ 
       \     [ 'mode', 'paste' ],
@@ -26,17 +27,16 @@ let g:lightline = {
       \ 'component_type': {
       \   'buffers': 'tabsel',
       \ },
-      \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-      \ 'subseparator': { 'left': '>', 'right': '' }
+      \ 'separator': { 'left': '', 'right': "\ue0be" },
+      \ 'subseparator': { 'left': "\ue0bd ", 'right': " \ue0bf" }
       \ }
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
-
 
 function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "RO"
+    return "\ue0a2"
   else
     return ""
   endif

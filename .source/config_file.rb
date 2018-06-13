@@ -30,7 +30,9 @@ class ConfigFile
 
   def stitch_components
     contents = ''
+    puts component_paths
     component_paths.each do |cp|
+    	puts cp
       component = File.read cp
       contents << component
     end
@@ -38,7 +40,7 @@ class ConfigFile
   end
 
   def component_paths
-    `cd #{@path} && ls -A`
+    `cd #{@path} && ls -AF`
       .split("\n")
       .map { |file| File.join @path, file }
   end
