@@ -40,6 +40,11 @@ unalias run-help
 alias help=run-help
 
 
+setopt autocd                   # Allow changing directories without `cd`
+setopt cdablevars               # Expand expressions passed to `cd`
+setopt alwaystoend
+unsetopt listbeep
+
 
 
 ## =============================================================================
@@ -72,11 +77,6 @@ alias help=run-help
 # monitor
 # nonomatch
 # shinstdin
-setopt autocd                   # Allow changing directories without `cd`
-setopt cdablevars               # Expand expressions passed to `cd`
-setopt alwaystoend
-unsetopt listbeep
-
 #setopt append_history           # Dont overwrite history
 #setopt extended_history         # Also record time and duration of commands.
 #setopt share_history            # Share history between multiple shells

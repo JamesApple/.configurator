@@ -1,4 +1,4 @@
-Plugin 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-dirvish'
 
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'

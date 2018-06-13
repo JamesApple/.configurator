@@ -1,14 +1,13 @@
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " Plugin 'mgee/lightline-bufferline'
-Plugin 'ajmwagar/lightline-deus'
+Plug 'ajmwagar/lightline-deus'
 
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ 
-      \     [ 'mode', 'paste' ],
-      \     [ 'fugitive' ]
+      \     [ 'mode', 'paste' ]
       \   ],
       \   'right': [
       \     [ 'lineinfo' ],
@@ -18,7 +17,6 @@ let g:lightline = {
       \ 'component_function': {
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
-      \   'fugitive': 'LightLineFugitive',
       \   'filename': 'LightLineFilename'
       \ },
       \ 'component_expand': {

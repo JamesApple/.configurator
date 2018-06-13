@@ -1,7 +1,12 @@
+nmap <C-w>z :call MarkWindowSwap()<CR>
+nmap <C-w>m :call DoWindowSwap()<CR>
+
+
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
     echo 'Window Marked'
 endfunction
+
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()

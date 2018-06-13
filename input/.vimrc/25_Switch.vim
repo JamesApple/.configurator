@@ -1,3 +1,3 @@
-Plugin 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/switch.vim'
 
 let g:switch_mapping = '\'

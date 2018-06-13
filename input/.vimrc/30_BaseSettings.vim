@@ -25,11 +25,11 @@ set wildmode=      " Show a list and then the actual completion in wildmenu
 " Hidden Characters
 set list       " Show hidden chars
 set listchars= " Use these characters to mimic hidden characters
-  \tab:•·,     
-  \trail:·,
-  \extends:❯,
-  \precedes:❮,
-  \nbsp:× 
+      \tab:•·,     
+      \trail:·,
+      \extends:❯,
+      \precedes:❮,
+      \nbsp:× 
 
 " Misc Visual
 set visualbell

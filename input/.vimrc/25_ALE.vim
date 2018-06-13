@@ -1,4 +1,4 @@
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 " Ale
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!'

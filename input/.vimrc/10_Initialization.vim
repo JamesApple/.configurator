@@ -1,4 +1,9 @@
-set shell=zsh " Load Zsh aliases
+" set shell=zsh 
+
+set shell=/bin/bash " Gitgutter breaks with zsh
+
+let g:mapleader = "\<Space>"
+
 
 if has('nvim')
   let g:python_host_prog =  '/usr/local/var/pyenv/versions/2.7.10/bin/python'

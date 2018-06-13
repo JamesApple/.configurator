@@ -1,3 +1,14 @@
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
+augroup quickFixSettings
+  autocmd!
+  autocmd FileType qf
+        \ nnoremap <buffer> <silent> <Esc> :close<CR>
+augroup END
+
+
+
 function! GetBufferList()
   redir =>buflist
   silent! ls!

@@ -1,2 +1,2 @@
-Plugin 'tpope/vim-projectionist'
+Plug 'tpope/vim-projectionist'
 

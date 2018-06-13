@@ -1,5 +1,5 @@
-Plugin 'junegunn/fzf.vim'
-Plugin 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
 
 " Ag preview with `?` mapped as preview window
@@ -8,7 +8,6 @@ command! -bang -nargs=* Ag
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
-
 
 autocmd! FileType fzf tnoremap <buffer> <Esc> <c-c>| " Exit fzf with escape
 
@@ -21,7 +20,6 @@ let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 nnoremap <silent><leader>gs :GFiles?<CR>| " Search changed files by git Status
 nnoremap <silent><leader>gl :Commits<CR>| " Search all commits
 nnoremap <silent><leader>gL :BCommits<CR>| " Search current file commits
-
 
 nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
 nnoremap <silent><leader>sf :GFiles<CR>| " Search files in repo

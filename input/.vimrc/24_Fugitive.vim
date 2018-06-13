@@ -1,4 +1,4 @@
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gm :Gmerge<Space>
@@ -6,11 +6,6 @@ nnoremap <leader>gf :Gfetch<Space>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
-
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gR :Gread<space>
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>gW :Gwrite!<CR>
 
 nnoremap <leader>gC :call ReviewLastCommit()<CR>
 
