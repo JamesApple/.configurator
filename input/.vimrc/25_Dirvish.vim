@@ -1,8 +1,7 @@
 Plug 'justinmk/vim-dirvish'
 
-" Dirvish
-let g:dirvish_mode = ':sort ,^.*[\/],'
 
+let g:dirvish_mode = ':sort ,^.*[\/],'
 
 
 augroup dirvish_config

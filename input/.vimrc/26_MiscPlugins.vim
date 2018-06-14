@@ -1,26 +1,10 @@
-Plug 'jiangmiao/auto-pairs'
-Plug 'Valloric/MatchTagAlways'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-unimpaired'
-Plug 'google/vim-searchindex' " Adds search numbers
-Plug 'editorconfig/editorconfig-vim'
-Plug 'AndrewRadev/splitjoin.vim' " gJ gS to split and join expressions
-Plug 'tpope/vim-abolish'
-" Abolish
-" :%Subvert/facilit{y,ies}/building{,s}/g
-" :Subvert/child{,ren}/adult{,s}/g
-" :Subvert/di{e,ce}/spinner{,s}/g
-" Cases 
-" crs to snake
-" cru UPPER_CASE
-" cr- dash-case
-" cr. dot-case
-" crt Title Case
-" crm MixedCase
-" crc camelCase
-" :Abolish {despa,sepe}rat{e,es,ed,ing,ely,ion,ions,or}  {despe,sepa}rat{}
-
-" Color Schemes
-" Plugin 'altercation/vim-colors-solarized'
+Plug 'jiangmiao/auto-pairs'          " Auto add closing parens and brackets
+Plug 'Valloric/MatchTagAlways'       " Always highlight matching xml/html tags
+Plug 'tpope/vim-surround'            " Surround in parens etc with ys or cs
+Plug 'tpope/vim-commentary'          " Comment with gc
+Plug 'tpope/vim-endwise'             " Add end after ruby
+Plug 'tpope/vim-unimpaired'          " Many helper functions
+Plug 'google/vim-searchindex'        " Adds search numbers
+Plug 'editorconfig/editorconfig-vim' " Set indentation and etc based on project
+Plug 'AndrewRadev/splitjoin.vim'     " gJ gS to split and join expressions
+Plug 'tpope/vim-abolish'             " Adds coercion and search and replace

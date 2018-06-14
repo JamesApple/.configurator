@@ -1,16 +1,20 @@
-Plug 'sheerun/vim-polyglot'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'tpope/vim-haml'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'othree/html5.vim'
-Plug 'gavocanov/vim-js-indent'
-Plug 'othree/yajs.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'andreimaxim/vim-io'
-Plug 'ap/vim-css-color'
-Plug 'mxw/vim-jsx'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'sheerun/vim-polyglot' " Kitchen Sink
 
+Plug 'hail2u/vim-css3-syntax'    " CSS3
+Plug 'ap/vim-css-color'          " CSS Color Highlights
+Plug 'cakebaker/scss-syntax.vim' " SCSS
+Plug 'othree/html5.vim'          " HTML5
+
+Plug 'tpope/vim-rails'   " Rails
+Plug 'tpope/vim-haml'    " HAML
+Plug 'vim-ruby/vim-ruby' " Ruby
+
+Plug 'othree/yajs.vim'                        " JS
+Plug 'mxw/vim-jsx'                            " JSX
+Plug 'othree/javascript-libraries-syntax.vim' " JS Frameworks
+Plug 'gavocanov/vim-js-indent'                " JS Indents
 let g:used_javascript_libs = 'underscore,vue,jquery'
+
+Plug 'andreimaxim/vim-io'      " IO
+Plug 'ekalinin/Dockerfile.vim' " Docker
+

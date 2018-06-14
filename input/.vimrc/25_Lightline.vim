@@ -1,8 +1,6 @@
 Plug 'itchyny/lightline.vim'
-" Plugin 'mgee/lightline-bufferline'
 Plug 'ajmwagar/lightline-deus'
 
-" Lightline
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
@@ -18,12 +16,6 @@ let g:lightline = {
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename'
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers',
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel',
       \ },
       \ 'separator': { 'left': '', 'right': "\ue0be" },
       \ 'subseparator': { 'left': "\ue0bd ", 'right': " \ue0bf" }
