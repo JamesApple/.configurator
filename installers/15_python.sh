@@ -3,7 +3,8 @@ brew install \
   readline \
   xz \
   pyenv
-
+# Python --enable-framework is required for vim completion building
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 pyenv install 2.7.10 -s
 pyenv install 3.5.0 -s
 

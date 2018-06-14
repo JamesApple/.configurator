@@ -14,7 +14,7 @@ nnoremap <silent><leader>sh :History<CR>| " (s)earch (h)istory
 nnoremap <silent><leader>st :Tags<CR>| " (s)earch all (t)ags
 nnoremap <silent><leader>gr :Ag<CR>| " (gr)ep all text in root directory
 
-nnoremap <silent> <leader>sft :Filetypes<CR>| " (s)elect (f)ile(t)ype
+" nnoremap <silent> <leader>st :Filetypes<CR>| " (s)elect (f)ile(t)ype
 
 vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>| " (K)all search
 nnoremap <silent> K :call SearchWordWithAg()<CR>| " (K)all search

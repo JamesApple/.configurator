@@ -3,6 +3,7 @@
   "libs": [
     "browser",
     "vue",
+    "react",
     "ecma5",
     "ecma6"
   ],

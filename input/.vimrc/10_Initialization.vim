@@ -17,6 +17,8 @@ if has('nvim')
   tnoremap <C-w><Right> <C-\><C-n><C-w>l
   tnoremap <C-w><Left> <C-\><C-n><C-w>h
   tnoremap <Esc> <C-\><C-n>| " Exit terminal with escape
+  autocmd BufWinEnter,WinEnter term://* startinsert| " Enter terminal in insert
+
 
   " NVR lets us open splits from terminal panes instead of russian nesting
   if executable('nvr')

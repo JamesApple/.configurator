@@ -1,4 +1,4 @@
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'pyenv local 2.7.10 && python2 install.py --js-completer --clang-completer ' }
 
 
 let g:ycm_autoclose_preview_window_after_completion = 1

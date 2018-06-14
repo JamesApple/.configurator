@@ -13,7 +13,7 @@ Plug 'othree/yajs.vim'                        " JS
 Plug 'mxw/vim-jsx'                            " JSX
 Plug 'othree/javascript-libraries-syntax.vim' " JS Frameworks
 Plug 'gavocanov/vim-js-indent'                " JS Indents
-let g:used_javascript_libs = 'underscore,vue,jquery'
+let g:used_javascript_libs = 'underscore,vue,jquery,react'
 
 Plug 'andreimaxim/vim-io'      " IO
 Plug 'ekalinin/Dockerfile.vim' " Docker
