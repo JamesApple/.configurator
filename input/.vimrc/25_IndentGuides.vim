@@ -7,5 +7,5 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_exclude_filetypes = ['help', 'startify', 'man', 'rogue']
 
 
-hi IndentGuidesEven  guibg=#373b48 ctermbg=3
-hi IndentGuidesOdd  guibg=#313248 ctermbg=3
+" hi IndentGuidesEven  guibg=#373b48 ctermbg=3
+" hi IndentGuidesOdd  guibg=#313248 ctermbg=3
