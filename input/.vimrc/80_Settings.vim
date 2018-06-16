@@ -83,6 +83,7 @@ set clipboard=unnamed
 set expandtab     " Replace tab with spaces
 set shiftwidth=2  " Indent size for << and >>
 set softtabstop=2 " Remove tab symbols as if they were spaces
+set autoindent
 set smartindent   " Automagically add smart indents after a break
 
 

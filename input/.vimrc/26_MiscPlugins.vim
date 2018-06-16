@@ -7,4 +7,3 @@ Plug 'tpope/vim-unimpaired'          " Many helper functions
 Plug 'google/vim-searchindex'        " Adds search numbers
 Plug 'editorconfig/editorconfig-vim' " Set indentation and etc based on project
 Plug 'AndrewRadev/splitjoin.vim'     " gJ gS to split and join expressions
-Plug 'tpope/vim-abolish'             " Adds coercion and search and replace

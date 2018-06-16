@@ -13,6 +13,7 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
+
 " Swap between tabs
 nmap <leader>1 1gt
 nmap <leader>2 2gt
@@ -36,14 +37,6 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Up> :bnext<CR>
 nnoremap <C-Down> :bprevious<CR>
 nnoremap <silent> <C-w>t :tabnew<CR>
-
-" Replace within block
-nnoremap <leader>R :'{,'}s/\<<c-r><c-w>\>//g<left><left>
-xnoremap <leader>R y:'{,'}s/<c-r><c-0>//g<left><left>
-
-" Replace in entire file
-nnoremap <leader>r :%s/\<<c-r><c-w>\>//g<left><left>
-xnoremap <leader>r y:%s/<c-r><c-0>//g<left><left>
 
 " Indent entire file
 nnoremap == mzgg=G`z
