@@ -4,7 +4,7 @@
 
 if [[ "$TERM" != 'dumb' ]]; then
 
-  setopt COMPLETE_ALIASES
+  # setopt COMPLETE_ALIASES  # This is the stupidest setting
   setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
   setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
   setopt PATH_DIRS           # Perform path search even on command names with slashes.
@@ -129,5 +129,4 @@ if [[ "$TERM" != 'dumb' ]]; then
   zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*.*' loopback localhost
   zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^*.*' '*@*'
   zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^<->.<->.<->.<->' '127.0.0.<->'
-
 fi

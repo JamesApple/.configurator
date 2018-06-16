@@ -1,7 +1,6 @@
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 alias g='git'
-
 # Next highest folder with .git
 alias tl='git rev-parse --show-toplevel'
 alias timeout='gtimeout'
@@ -12,7 +11,6 @@ alias be='b exec'
 alias ber='be rails'
 alias bu='bundle update'
 alias bi='bundle install'
-
 # Rails Aliases
 alias berg='ber generate'
 alias berc='ber console'
