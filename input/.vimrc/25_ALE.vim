@@ -13,5 +13,5 @@ let g:ale_javascript_prettier_eslint_options = '--single-quote --parser=flow --p
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop'],
-\   'vue': ['eslint'],
+\   'vue': ['prettier', 'eslint'],
 \}

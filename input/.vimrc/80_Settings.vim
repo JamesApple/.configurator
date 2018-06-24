@@ -7,12 +7,16 @@ set path=$PWD/**                  " Add all folders in root to path
 set showtabline=2                 " Always show tabline
 set laststatus=2                  " Always show statusline
 set mouse=                        " Disable mouse for everything
-set hidden                        " Hide buffers instead of deleting
 set autoread                      " Always read from a file when it has been changed externally
 set directory=~/.vimtmp           " Create global swp file in .vimtmp
 set confirm                       " Failed commands will ask permission occasionally
-set backspace=indent,eol,start    " Backspace deletes any character
+" set backspace=indent,eol,start    " Backspace deletes any character
 
+set hidden          " Hide buffers instead of deleting
+set winwidth=110    " Minimum width for focused window
+set colorcolumn=110 " Highlight column
+set winheight=15    " Minimum height for focused window
+set warn       " Issue a warning when running a shell command with unsaved changes
 
 " Ex commands
 " Show a list and then the actual completion in wildmenu
@@ -70,8 +74,7 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set cursorline          " Highlight current line
-set colorcolumn=80      " Highlight column
-set virtualedit=onemore " Allow cursor to move just past the end of a line
+" set virtualedit=onemore " Allow cursor to move just past the end of a line
 set scrolloff=999       " Keep cursor in middle of screen
 
 

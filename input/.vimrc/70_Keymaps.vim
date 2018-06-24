@@ -13,7 +13,6 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-
 " Swap between tabs
 nmap <leader>1 1gt
 nmap <leader>2 2gt
@@ -25,17 +24,17 @@ nmap <leader>7 7gt
 nmap <leader>8 8gt
 nmap <leader>9 9gt
 
+
 " Make C-w the same in insert and normal
 inoremap <C-w><Up> <ESC><C-w><Up>
 inoremap <C-w><Down> <ESC><C-w><Down>
 inoremap <C-w><Right> <ESC><C-w><Right>
 inoremap <C-w><Left> <ESC><C-w><Left>
 
-" Arrow key tab and buffer nav
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <C-Up> :bnext<CR>
-nnoremap <C-Down> :bprevious<CR>
+nnoremap <C-Left> <C-w><Left>
+nnoremap <C-Right> <C-w><Right>
+nnoremap <C-Up> <C-w><Up>
+nnoremap <C-Down> <C-w><Down>
 nnoremap <silent> <C-w>t :tabnew<CR>
 
 " Indent entire file
@@ -45,7 +44,7 @@ nnoremap == mzgg=G`z
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
-"Clear current search highlight by double tapping //
+" Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
 "  Vim Editing

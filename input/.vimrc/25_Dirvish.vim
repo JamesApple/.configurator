@@ -1,5 +1,5 @@
 Plug 'justinmk/vim-dirvish'
-
+Plug 'kristijanhusak/vim-dirvish-git'
 
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
