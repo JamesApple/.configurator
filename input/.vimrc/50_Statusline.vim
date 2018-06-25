@@ -1,4 +1,4 @@
-
+" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction

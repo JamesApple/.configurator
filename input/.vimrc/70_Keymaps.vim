@@ -13,18 +13,6 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-" Swap between tabs
-nmap <leader>1 1gt
-nmap <leader>2 2gt
-nmap <leader>3 3gt
-nmap <leader>4 4gt
-nmap <leader>5 5gt
-nmap <leader>6 6gt
-nmap <leader>7 7gt
-nmap <leader>8 8gt
-nmap <leader>9 9gt
-
-
 " Make C-w the same in insert and normal
 inoremap <C-w><Up> <ESC><C-w><Up>
 inoremap <C-w><Down> <ESC><C-w><Down>
