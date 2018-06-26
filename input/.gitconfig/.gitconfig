@@ -43,9 +43,10 @@
   lgg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 
   a = add
-  c = commit --verbose
+  aci = add . && git commit
+  ci = commit --verbose
 
-  m = commit --amend --verbose
+  cia = commit --amend --verbose
 
   d = diff
   ds = diff --stat
@@ -53,6 +54,8 @@
 
   s = status -sb
   co = checkout
+
+  br = branch
 
   # list branches sorted by last modified
   bls = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
