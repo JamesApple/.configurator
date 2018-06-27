@@ -12,10 +12,10 @@ if has('nvim')
   highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
 
   " Use normal ctrlw move commands to navigate out of terminal
-  tnoremap <C-w><Up> <C-\><C-n><C-w>k
-  tnoremap <C-w><Down> <C-\><C-n><C-w>j
-  tnoremap <C-w><Right> <C-\><C-n><C-w>l
-  tnoremap <C-w><Left> <C-\><C-n><C-w>h
+  tnoremap <C-w>k <C-\><C-n><C-w>k
+  tnoremap <C-w>j <C-\><C-n><C-w>j
+  tnoremap <C-w>l <C-\><C-n><C-w>l
+  tnoremap <C-w>h <C-\><C-n><C-w>h
   tnoremap <Esc> <C-\><C-n>| " Exit terminal with escape
   autocmd BufWinEnter,WinEnter term://* startinsert| " Enter terminal in insert
 

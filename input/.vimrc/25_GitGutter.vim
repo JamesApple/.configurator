@@ -5,6 +5,7 @@ nnoremap <silent> <leader>ghn :GitGutterNextHunk<CR>| " (g)it (h)unk (n)ext
 nnoremap <silent> <leader>ghp :GitGutterPrevHunk<CR>| " (g)it (h)unk (p)revious
 nnoremap <silent> <Leader>ghu :GitGutterRevertHunk<CR>
 nnoremap <silent> <Leader>gha :GitGutterStageHunk<CR>
+nnoremap <silent> <Leader>ghs :GitGutterStageHunk<CR>
 nnoremap <silent> <Leader>ghp :GitGutterPreviewHunk<CR><c-w>j
 nnoremap yog :GitGutterToggle<CR>| " Unimpaired style toggle
 

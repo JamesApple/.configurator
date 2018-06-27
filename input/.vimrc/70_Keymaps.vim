@@ -14,16 +14,26 @@ nmap g* g*zz
 nmap g# g#zz
 
 " Make C-w the same in insert and normal
-inoremap <C-w><Up> <ESC><C-w><Up>
-inoremap <C-w><Down> <ESC><C-w><Down>
-inoremap <C-w><Right> <ESC><C-w><Right>
-inoremap <C-w><Left> <ESC><C-w><Left>
+inoremap <C-w>k <ESC><C-w>k
+inoremap <C-w>j <ESC><C-w>j
+inoremap <C-w>l <ESC><C-w>l
+inoremap <C-w>h <ESC><C-w>h
 
-nnoremap <C-Left> <C-w><Left>
-nnoremap <C-Right> <C-w><Right>
-nnoremap <C-Up> <C-w><Up>
-nnoremap <C-Down> <C-w><Down>
+nnoremap <C-h> <C-w><Left>
+nnoremap <C-l> <C-w><Right>
+nnoremap <C-k> <C-w><Up>
+nnoremap <C-j> <C-w><Down>
 nnoremap <silent> <C-w>t :tabnew<CR>
+
+" Disable Arrow Keys
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 " Indent entire file
 nnoremap == mzgg=G`z
