@@ -1,5 +1,5 @@
 Plug 'AndrewRadev/sideways.vim'
 
 
-nnoremap <Leader>< :SidewaysLeft<CR>
-nnoremap <Leader>> :SidewaysRight<CR>
+nnoremap g< :SidewaysLeft<CR>
+nnoremap g> :SidewaysRight<CR>

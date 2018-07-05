@@ -22,10 +22,10 @@ inoremap <C-w>j <ESC><C-w>j
 inoremap <C-w>l <ESC><C-w>l
 inoremap <C-w>h <ESC><C-w>h
 
-nnoremap <C-h> <C-w><Left>
-nnoremap <C-l> <C-w><Right>
-nnoremap <C-k> <C-w><Up>
-nnoremap <C-j> <C-w><Down>
+" nnoremap <C-h> <C-w><Left>
+" nnoremap <C-l> <C-w><Right>
+" nnoremap <C-k> <C-w><Up>
+" nnoremap <C-j> <C-w><Down>
 nnoremap <silent> <C-w>t :tabnew<CR>
 
 " Disable Arrow Keys

@@ -7,7 +7,7 @@ nnoremap <leader>gm :Gmerge<Space>| " (m)erge
 nnoremap <leader>gf :Gfetch<Space>| " (f)etch
 nnoremap <leader>gl :Glog<CR>|      " (l)og
 nnoremap <leader>gd :Gvdiff<CR>|    " (d)iff
-nnoremap <leader>gb :Gblame<CR>|    " (b)lame
+nnoremap <leader>gbl :Gblame<CR>|    " (b)lame
 
 nnoremap <space>ga :Dispatch! git add %:p<CR>
 nnoremap <space>gs :Gstatus<CR>
@@ -18,15 +18,19 @@ nnoremap <space>ge :Gedit<CR>
 nnoremap <space>gr :Gread<CR>
 nnoremap <space>gw :Gwrite<CR><CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
 nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gb :Git branch<Space>
-nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gbr :Git branch<Space>
+nnoremap <space>gc :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 
+nnoremap <Leader>g- :Silent Git stash<CR>:e<CR>
+nnoremap <Leader>g+ :Silent Git stash pop<CR>:e<CR>
+
 nnoremap <leader>gC :call ReviewLastCommit()<CR>| " last (C)ommit 
 
+xnoremap dp :diffput<CR>
+xnoremap do :diffget<cr>
 
 augroup  fugitive_buffers
   " Map .. to go up in trees and blobs
