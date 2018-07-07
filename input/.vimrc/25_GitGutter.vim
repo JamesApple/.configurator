@@ -9,9 +9,12 @@ nnoremap <silent> <Leader>ghs :GitGutterStageHunk<CR>
 nnoremap <silent> <Leader>ghp :GitGutterPreviewHunk<CR><c-w>j
 nnoremap yog :GitGutterToggle<CR>| " Unimpaired style toggle
 
-" augroup  gitGutterFiletypeDisables
-"   autocmd BufEnter,BufWinEnter,WinEnter */ GitGutterToggle
-" augroup END
+" Disable gitgutter for specified filetypes
+let gitgutter_blacklist = ['dirvish']
+augroup gitGutterFiletypeDisabler
+  autocmd BufLeave * if index(gitgutter_blacklist, &ft) < 0 | :GitGutterEnable
+  autocmd BufEnter */ :GitGutterDisable
+augroup END
 
 let g:gitgutter_realtime = 0                        " Realtime breaks with Zsh
 let g:gitgutter_map_keys = 0                        " No keymaps
