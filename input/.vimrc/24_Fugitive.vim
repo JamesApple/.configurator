@@ -2,7 +2,7 @@ Plug 'tpope/vim-fugitive'
 
 
 " (g)it
-nnoremap <leader>gc :Gcommit<CR>|   " (c)ommit
+" nnoremap <leader>gc :Gcommit<CR>|   " (c)ommit
 nnoremap <leader>gm :Gmerge<Space>| " (m)erge
 nnoremap <leader>gf :Gfetch<Space>| " (f)etch
 nnoremap <leader>gl :Glog<CR>|      " (l)og
@@ -11,8 +11,8 @@ nnoremap <leader>gbl :Gblame<CR>|    " (b)lame
 
 nnoremap <space>ga :Dispatch! git add %:p<CR>
 nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
+" nnoremap <space>gc :Gcommit -v -q<CR>
+" nnoremap <space>gt :Gcommit -v -q %:p<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>ge :Gedit<CR>
 nnoremap <space>gr :Gread<CR>
@@ -20,7 +20,7 @@ nnoremap <space>gw :Gwrite<CR><CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gbr :Git branch<Space>
-nnoremap <space>gc :Git checkout<Space>
+nnoremap <space>gc :!git commit -m ''<Left>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 

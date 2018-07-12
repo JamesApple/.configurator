@@ -1,12 +1,12 @@
-" Makes Y consistent with D
-nnoremap Y y$
+
+nnoremap Y y$ | " Makes Y consistent with D
 
 " Invert mark jumping keys
 nnoremap ' `
 nnoremap ` '
 
+" Move to first character at SOL above
 nnoremap <Backspace> -
-
 
 " Keep search results in center of screen
 nmap n nzz

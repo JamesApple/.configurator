@@ -9,6 +9,7 @@ nnoremap <silent> <Leader>ghs :GitGutterStageHunk<CR>
 nnoremap <silent> <Leader>ghp :GitGutterPreviewHunk<CR><c-w>j
 nnoremap yog :GitGutterToggle<CR>| " Unimpaired style toggle
 
+
 " Disable gitgutter for specified filetypes
 let gitgutter_blacklist = ['dirvish']
 augroup gitGutterFiletypeDisabler

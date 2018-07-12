@@ -25,6 +25,8 @@ let test#strategy = {
       \ 'suite':   'dispatch_background',
       \}
 
+let test#javascript#jest#executable = 'yarn jest'
+
 let test#ruby#rspec#file_pattern = '_spec\.rb'
 let test#ruby#rspec#executable = 'rspec'
 let test#ruby#rspec#options = {

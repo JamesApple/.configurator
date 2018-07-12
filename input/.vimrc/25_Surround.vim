@@ -16,6 +16,7 @@ nmap ds  <Plug>Dsurround
 nmap cs  <Plug>Csurround
 nmap cS  <Plug>CSurround
 
+xmap s   <Plug>Vsurround
 xmap S   <Plug>VSurround
 xmap gS  <Plug>VgSurround
 

@@ -22,8 +22,9 @@ let g:ulti_expand_or_jump_res = 0
 
 let g:SuperTabClosePreviewOnPopupClose = 1
 
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
+" let g:tern#command = ['tern']
+" let g:tern#arguments = ['--persistent']
+" let g:tern#command = ["node", expand('<sfile>:h') . '/Users/jamesapple/.nvm/versions/node/v8.11.2/bin/node', '--no-port-file --persistent']
 
 let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
@@ -35,4 +36,4 @@ let g:deoplete#omni#functions.javascript = [
 \]
 
 
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"

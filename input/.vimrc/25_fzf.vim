@@ -11,18 +11,16 @@ nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
 nnoremap <silent><leader>sf :GFiles<CR>| " (s)earch (f)iles in repo
 nnoremap <silent><leader>sb :Buffers<CR>| " (s)earch (b)uffers
 nnoremap <silent><leader>sh :History<CR>| " (s)earch (h)istory
-nnoremap <silent><leader>st :Tags<CR>| " (s)earch all (t)ags
-nnoremap <silent><leader>gr :Ag<CR>| " (gr)ep all text in root directory
+" nnoremap <silent><leader>st :Tags<CR>| " (s)earch all (t)ags
+nnoremap <silent><leader>st :Ag<CR>| " (gr)ep all text in root directory
 
-" nnoremap <silent> <leader>st :Filetypes<CR>| " (s)elect (f)ile(t)ype
-
-vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>| " (K)all search
-nnoremap <silent> K :call SearchWordWithAg()<CR>| " (K)all search
+" vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>| " (K)all search
+" nnoremap <silent> K :call SearchWordWithAg()<CR>| " (K)all search
 
 " Search mappings for current mode
-nmap <leader>sm <plug>(fzf-maps-n)
-xmap <leader>sm <plug>(fzf-maps-x)
-omap <leader>sm <plug>(fzf-maps-o)
+nmap <leader><Tab> <plug>(fzf-maps-n)
+xmap <leader><Tab> <plug>(fzf-maps-x)
+omap <leader><Tab> <plug>(fzf-maps-o)
 
 autocmd! FileType fzf tnoremap <buffer> <Esc> <c-c>| " Exit fzf with escape
 

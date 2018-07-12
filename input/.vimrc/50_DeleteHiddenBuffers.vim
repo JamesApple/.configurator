@@ -1,4 +1,4 @@
-nnoremap <silent> <Leader><BS>b :call DeleteHiddenBuffers()<CR>
+nnoremap <silent> <Leader>bd :call DeleteHiddenBuffers()<CR>
 
 
 function! DeleteHiddenBuffers()

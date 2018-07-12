@@ -1,26 +1,24 @@
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'Alok/notational-fzf-vim'
 
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_list = [{
+      \'path': '~/library/Mobile Documents/com~apple~CloudDocs/notes/', 
+      \'path_html':'~/library/Mobile Documents/com~apple~CloudDocs/notes_html/',
+      \'auto_toc': 1,
+      \'auto_export': 1
+      \ }]
 
-nnoremap <leader>? :NV<CR>
+" For clarity, in your .vimrc file you can define wiki options using separate
+" |Dictionary| variables and subsequently compose them into |g:vimwiki_list|. >
+"     let wiki_1 = {}
+"     let wiki_1.path = '~/my_docs/'
+"     let wiki_1.html_template = '~/public_html/template.tpl'
+"     let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
+"     let wiki_2 = {}
+"     let wiki_2.path = '~/project_docs/'
+"     let wiki_2.index = 'main'
 
-set conceallevel=2
-let g:vim_markdown_fenced_languages = ['csharp=cs', 'javascript=js', 'ruby=rb']
-
-let g:nv_search_paths = ['~/library/Mobile Documents/com~apple~CloudDocs/notes', './docs/', './README.md']
-let g:nv_default_extension = '.md'
-let g:nv_ignore_pattern = ['summarize-*', 'misc*']
-let g:nv_use_short_pathnames = 1
-let g:nv_show_preview = 1
-let g:nv_wrap_preview_text = 1
-let g:nv_preview_width = 50
-let g:nv_preview_direction = 'right'
-let g:nv_create_note_window = 'vertical split'
-let g:nv_create_note_key = 'ctrl-x'
-let g:nv_keymap = {
-      \ 'ctrl-s': 'split ',
-      \ 'ctrl-v': 'vertical split ',
-      \ 'ctrl-t': 'tabedit ',
-      \ }
+"     let g:vimwiki_list = [wiki_1, wiki_2]
