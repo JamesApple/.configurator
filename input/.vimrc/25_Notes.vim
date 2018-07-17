@@ -10,6 +10,7 @@ let g:vimwiki_list = [{
       \'syntax': 'markdown', 'ext': '.md'
       \ }]
 
+let g:vimwiki_global_ext = 0 " Disable vimwiki ruining all my other md files
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
