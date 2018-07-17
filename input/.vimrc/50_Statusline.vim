@@ -5,7 +5,10 @@ endfunction
 
 function! StatuslineGit()
   let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+  let l:gitstatuses = join(GitGutterGetHunkSummary(), ', ')
+  return strlen(l:branchname) > 0?'  '.l:branchname.' '.l:gitstatuses.' ':''
+  " let l:gitstatus = join(GitGutterGetHunkSummary(), ',')
+  " return fugitive#statusline()
 endfunction
 
 

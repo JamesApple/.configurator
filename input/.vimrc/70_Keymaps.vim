@@ -29,14 +29,14 @@ inoremap <C-w>h <ESC><C-w>h
 nnoremap <silent> <C-w>t :tabnew<CR>
 
 " Disable Arrow Keys
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
 
 " Indent entire file
 nnoremap == mzgg=G`z

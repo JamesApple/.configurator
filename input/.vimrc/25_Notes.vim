@@ -1,15 +1,31 @@
 
 Plug 'vimwiki/vimwiki'
-Plug 'mattn/calendar-vim'
+Plug 'itchyny/calendar.vim'
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_list = [{
       \'path': '~/library/Mobile Documents/com~apple~CloudDocs/notes/', 
       \'path_html':'~/library/Mobile Documents/com~apple~CloudDocs/notes_html/',
       \'auto_toc': 1,
-      \'auto_export': 1
+      \'syntax': 'markdown', 'ext': '.md'
       \ }]
 
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+augroup vimwiki_custom_mappings
+  autocmd!
+  autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
+
+  autocmd FileType vimwiki
+          \ map <buffer> <C-]> <Plug>VimwikiFollowLink
+          \| nmap <buffer> \ <Plug>VimwikiNextLink
+          \| nmap <buffer> \| <Plug>VimwikiPrevLink
+          \| nmap <buffer> - <Plug>VimwikiGoBackLink
+          \| nmap <F12> <Plug>VimwikiRemoveHeaderLevel
+augroup END
+
+      " \'auto_export': 1,
 " For clarity, in your .vimrc file you can define wiki options using separate
 " |Dictionary| variables and subsequently compose them into |g:vimwiki_list|. >
 "     let wiki_1 = {}
