@@ -1,4 +1,5 @@
-" Misc
+"
+                                  " Misc
 set clipboard=unnamed,unnamedplus " Paste and yank always use system board
 set noswapfile                    " Disable using *.swp
 set diffopt=filler,vertical       " default behavior for diff
@@ -10,13 +11,12 @@ set mouse=                        " Disable mouse for everything
 set autoread                      " Always read from a file when it has been changed externally
 set directory=~/.vimtmp           " Create global swp file in .vimtmp
 set confirm                       " Failed commands will ask permission occasionally
-" set backspace=indent,eol,start    " Backspace deletes any character
 
-set hidden          " Hide buffers instead of deleting
-set winwidth=110    " Minimum width for focused window
-set colorcolumn=110 " Highlight column
-set winheight=15    " Minimum height for focused window
-set warn       " Issue a warning when running a shell command with unsaved changes
+set hidden                        " Hide buffers instead of deleting
+set winwidth=40                   " Minimum width for focused window
+set colorcolumn=110               " Highlight column
+set winheight=10                  " Minimum height for focused window
+set warn                          " Issue a warning when running a shell command with unsaved changes
 
 " Ex commands
 " Show a list and then the actual completion in wildmenu
