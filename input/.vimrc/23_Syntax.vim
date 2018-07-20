@@ -1,21 +1,21 @@
-Plug 'sheerun/vim-polyglot' " Kitchen Sink
+Plug 'sheerun/vim-polyglot'                                             " Kitchen Sink
 
-Plug 'hail2u/vim-css3-syntax'    " CSS3
-Plug 'ap/vim-css-color'          " CSS Color Highlights
-Plug 'cakebaker/scss-syntax.vim' " SCSS
-Plug 'othree/html5.vim'          " HTML5
+Plug 'hail2u/vim-css3-syntax', { 'for': ['scss', 'css', 'jsx', 'vue'] } " CSS3
+Plug 'ap/vim-css-color', { 'for': ['scss', 'vue', 'jsx', 'css'] }       " CSS Color Highlights
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'vue'] }            " SCSS
+Plug 'othree/html5.vim', { 'for': ['html', 'jsx', 'vue'] }              " HTML5
 
-Plug 'tpope/vim-rails'   " Rails
-Plug 'tpope/vim-haml'    " HAML
-Plug 'vim-ruby/vim-ruby' " Ruby
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }                             " Rails
+Plug 'tpope/vim-haml', { 'for': ['haml'] }                              " HAML
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                           " Ruby
 
-Plug 'HerringtonDarkholme/yats.vim'           " TS
-Plug 'othree/yajs.vim'                        " JS
-Plug 'mxw/vim-jsx'                            " JSX
-Plug 'othree/javascript-libraries-syntax.vim' " JS Frameworks
-Plug 'gavocanov/vim-js-indent'                " JS Indents
+Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }          " TS
+Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
+Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
+Plug 'othree/javascript-libraries-syntax.vim'                           " JS Frameworks
+Plug 'gavocanov/vim-js-indent'                                          " JS Indents
 let g:used_javascript_libs = 'underscore,vue,jquery,react'
 
-Plug 'andreimaxim/vim-io'      " IO
-Plug 'ekalinin/Dockerfile.vim' " Docker
+Plug 'andreimaxim/vim-io', { 'for': 'io' }                              " IO
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'docker' }" Docker
 
