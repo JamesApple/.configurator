@@ -1,24 +1,27 @@
 {
-  "ecmaVersion": 6,
+  "ecmaVersion": 7,
   "libs": [
     "browser",
-    "vue",
-    "react",
-    "ecma5",
-    "ecma6"
+    "ecmascript",
+    "react"
   ],
   "plugins": {
-      "doc_comment": {
-        "fullDocs": true,
-        "strong": true
-      },
-      "es_modules": {},
-      "node": {}
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    },
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "es_modules": {},
+    "node": {},
+    "node_resolve": {},
+    "commonjs": {},
+    "webpack": {
+      "configPath": "./webpack.config.js",
+      "modules": ["node_modules"]
+    }
   },
-  "loadEagerly": [
-    "app/webpacker/**/*.js"
-  ],
-  "dontLoad": [
-      "node_modules/**"
-  ]
+  "loadEagerly": ["**/*.js"],
+  "dontLoad": ["node_modules/**"]
 }
