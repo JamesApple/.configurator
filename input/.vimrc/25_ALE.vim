@@ -11,7 +11,11 @@ let g:ale_set_highlights = 0      " Don't show inline highlights for issus
 
 let g:ale_javascript_prettier_eslint_options = '--single-quote --parser=flow --print-width=120 --write --tab-width=2'
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
-\   'vue': ['prettier', 'eslint'],
+\   'vue': ['eslint'],
+\   'json': ['prettier'],
 \}
+
+" Old config
+" \   'vue': ['prettier', 'eslint'],

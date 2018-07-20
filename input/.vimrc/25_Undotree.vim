@@ -1,5 +1,5 @@
 if has("persistent_undo")
-  Plug 'mbbill/undotree'
+  Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 
   nmap <leader>u :UndotreeToggle<CR>

@@ -9,6 +9,7 @@ Plug 'tpope/vim-rails'   " Rails
 Plug 'tpope/vim-haml'    " HAML
 Plug 'vim-ruby/vim-ruby' " Ruby
 
+Plug 'HerringtonDarkholme/yats.vim'           " TS
 Plug 'othree/yajs.vim'                        " JS
 Plug 'mxw/vim-jsx'                            " JSX
 Plug 'othree/javascript-libraries-syntax.vim' " JS Frameworks

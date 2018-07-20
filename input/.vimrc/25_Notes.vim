@@ -1,6 +1,6 @@
 
-Plug 'vimwiki/vimwiki'
-Plug 'itchyny/calendar.vim'
+Plug 'vimwiki/vimwiki', { 'on': [ 'VimwikiIndex', 'Vimwiki' ], 'for': 'vimwiki' }
+Plug 'itchyny/calendar.vim', { 'on': [ 'Calendar' ] }
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_list = [{

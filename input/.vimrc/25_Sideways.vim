@@ -1,4 +1,4 @@
-Plug 'AndrewRadev/sideways.vim'
+Plug 'AndrewRadev/sideways.vim', { 'on': [ 'SidewaysRight', 'SidewaysLeft' ] }
 
 
 nnoremap g< :SidewaysLeft<CR>

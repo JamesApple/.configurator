@@ -1,9 +1,18 @@
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 
-
 let g:dirvish_mode = ':sort ,^.*[\/],'
 
+  let g:dirvish_git_indicators = {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Deleted'   : '✖',
+  \ 'Ignored'   : '☒',
+  \ 'Unknown'   : '?'
+  \ }
 
 augroup dirvish_config
   autocmd!
