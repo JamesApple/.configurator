@@ -1,0 +1,22 @@
+snippet inline "Inline completion example" i
+.classList.remove('$1')
+endsnippet
+
+snippet beginning "Beginning of line example" b
+${1:FIELDNAME} = models.CharField(${2:...})
+endsnippet
+
+snippet viml "Vim date interp example"
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet mirror "Mirroring example"
+---
+title: ${1:Meet UltiSnips}
+date: ${2:`date +%Y-%m-%d`}
+tags: $3
+---
+# $1
+$0
+endsnippet
+

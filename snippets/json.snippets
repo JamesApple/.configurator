@@ -1,0 +1,70 @@
+snippet node "Tern Node config" 
+{
+  "ecmaVersion": 7,
+  "libs": ["ecmascript"],
+  "plugins": {
+    "node": {}
+  },
+  "loadEagerly": [
+  ],
+  "dontLoad": []
+}
+endsnippet
+
+snippet webpack "Tern Webpack config"
+{
+  "ecmaVersion": 7,
+  "libs": [
+    "browser",
+    "ecmascript"
+  ],
+  "plugins": {
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "modules": {},
+    "webpack": {
+      "configPath": "./webpack.config.js",
+      "modules": ["./node_modules"]
+    }
+  },
+  "loadEagerly": [
+  ],
+  "dontLoad": []
+}
+endsnippet
+
+snippet kitchensink "Tern Kitchen Sink "
+{
+  "ecmaVersion": 7,
+  "libs": ["browser", "ecmascript", "react"],
+  "plugins": {
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    },
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "es_modules": {},
+    "node": {},
+    "node_resolve": {},
+    "commonjs": {},
+    "webpack": {
+      "configPath": "./webpack.config.js",
+      "modules": ["node_modules"]
+    }
+  },
+  "loadEagerly": [
+    "*/*/*/*/*/*/*/*.js",
+    "*/*/*/*/*/*/*.js",
+    "*/*/*/*/*/*.js",
+    "*/*/*/*/*.js",
+    "*/*/*/*.js",
+    "*/*/*.js",
+    "*/*.js",
+    "*.js"
+  ],
+  "dontLoad": ["node_modules/**"]
+}
+endsnippet
