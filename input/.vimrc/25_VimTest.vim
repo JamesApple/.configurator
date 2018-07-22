@@ -35,4 +35,3 @@ let test#ruby#rspec#options = {
       \ 'suite':   '--format progress --tag "~slow"',
       \}
 
-"  \ 'suite':   '--require ~/.rspec_support/quickfix_formatter.rb --format QuickfixFormatter --out quickfix.out --tag "~slow"',

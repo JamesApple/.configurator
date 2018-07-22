@@ -1,5 +1,14 @@
-"
-                                  " Misc
+set history=500                                                                 "Store lots of :cmdline history
+set title                                                                       "change the terminal's title
+set splitbelow
+set cmdheight=2
+set conceallevel=2
+set exrc                                                                        "Allow using local vimrc
+set secure                                                                      "Forbid autocmd in local vimrc
+
+set grepprg=rg\ --vimgrep                                                       "Use ripgrep for grepping
+
+" Misc
 set clipboard=unnamed,unnamedplus " Paste and yank always use system board
 set noswapfile                    " Disable using *.swp
 set diffopt=filler,vertical       " default behavior for diff
@@ -7,7 +16,7 @@ set noequalalways                 " Don't equalize windows when I change a windo
 set path=$PWD/**                  " Add all folders in root to path
 set showtabline=2                 " Always show tabline
 set laststatus=2                  " Always show statusline
-set mouse=                        " Disable mouse for everything
+set mouse=a                        " en/disable mouse for everything
 set autoread                      " Always read from a file when it has been changed externally
 set directory=~/.vimtmp           " Create global swp file in .vimtmp
 set confirm                       " Failed commands will ask permission occasionally
@@ -20,11 +29,10 @@ set warn                          " Issue a warning when running a shell command
 
 " Ex commands
 " Show a list and then the actual completion in wildmenu
-set wildmode=
-      \list:longest,
-      \full
+set wildmode=full
 set showcmd        " Always show current command
-set notimeout      " Disable command timeouts
+" set notimeout      " Disable command timeouts
+set timeoutlen=1000 ttimeoutlen=0                                               "Reduce Command timeout for faster escape and O
 set wildmenu       " Enable wildmenu command completion
 set wildchar=<Tab> " Use tab to run completion commands
 
@@ -58,7 +66,8 @@ set foldopen=
       \mark,
       \percent,
       \search
-set foldmethod=indent " Always fold on indents
+set foldmethod=indent " Always fold on indents, syntax is too heavy
+set foldlevelstart=5 " Fold only after N deep
 
 
 " Search
@@ -76,6 +85,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set cursorline          " Highlight current line
 " set virtualedit=onemore " Allow cursor to move just past the end of a line
 set scrolloff=999       " Keep cursor in middle of screen
+set sidescrolloff=15
+set sidescroll=5
 
 
 " Use system clipboard
@@ -89,7 +100,12 @@ set softtabstop=2 " Remove tab symbols as if they were spaces
 set autoindent
 set smartindent   " Automagically add smart indents after a break
 
+augroup vimrc
+  autocmd FocusGained,BufEnter * checktime                                    "Refresh file when vim gets focus
+augroup END
 
-" Completion
-set complete=.,w,b,u,t
-set omnifunc=syntaxcomplete#Complete
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END

@@ -21,6 +21,7 @@ nnoremap <silent><leader>st :Ag<CR>| " (gr)ep all text in root directory
 nmap <leader><Tab> <plug>(fzf-maps-n)
 xmap <leader><Tab> <plug>(fzf-maps-x)
 omap <leader><Tab> <plug>(fzf-maps-o)
+imap <c-x><Tab> <plug>(fzf-maps-i)
 
 autocmd! FileType fzf tnoremap <buffer> <Esc> <c-c>| " Exit fzf with escape
 

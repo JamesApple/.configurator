@@ -1,4 +1,8 @@
 " https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
+"https://github.com/ramitos/jsctags
+" https://medium.com/@jrwillette88/tern-why-it-breaks-and-how-to-fix-it-8d1677df05f9
+" let g:deoplete#enable_profile = 1
+" call deoplete#custom#source('tern', 'debug_enabled', 1)<CR>
 
 function! BuildTS(info)
   if a:info.status == 'installed' || a:info.force || a:info.status == 'updated'
@@ -8,44 +12,40 @@ function! BuildTS(info)
   endif
 endfunction
 
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': function('BuildTS') }
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ervandew/supertab'
+
+" Deoplete Sources
+Plug 'Shougo/neco-syntax' 
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/echodoc.vim'
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': function('BuildTS') }
 
-" Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'ervandew/supertab'
 
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" nnoremap <leader>se :UltiSnipsEdit<CR>
+set completeopt+=menuone,noinsert,noselect
+set completeopt-=preview
 
-" set completeopt=longest,menuone,preview
-" let g:UltiSnipsSnippetsDir = '~/.nvim/UltiSnips'
-" let g:UltiSnipsSnippetDirectories=[$HOME.'/.nvim/UltiSnips']
-" let g:UltiSnipsEditSplit = 'vertical'
-" let g:UltiSnipsListSnippets = '<nop>'
-" let g:UltiSnipsExpandTrigger = '<c-x>'
-" let g:ulti_expand_or_jump_res = 0
-
+let g:SuperTabDefaultCompletionType = "<C-p"
+set cmdheight=2
 let g:deoplete#enable_at_startup = 1
+let deoplete#tag#cache_limit_size = 5000000 " Increase tag cache size for mega projects
+let g:deoplete#auto_complete_delay = 0
+let g:echodoc_enable_at_startup=1
+let g:deoplete#enable_camel_case = 1
+" Tern
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#include_keywords = 1
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
 
+nnoremap <leader>se :UltiSnipsEdit<CR>
 " let g:SuperTabClosePreviewOnPopupClose = 1
-" let g:deoplete#sources = {}
-" let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
-" let g:deoplete#omni#functions = {}
-" let g:deoplete#omni#functions.javascript = [
-"   \ 'tern#Complete',
-"   \ 'jspc#omni'
-" \]
 
-
-" let g:tern#command = ['tern']
-" let g:tern#arguments = ['--persistent']
-" let g:tern#command = ["node", expand('<sfile>:h') . '/Users/jamesapple/.nvm/versions/node/v8.11.2/bin/node', '--no-port-file --persistent']
-
-
-" autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"

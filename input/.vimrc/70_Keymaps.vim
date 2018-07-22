@@ -64,5 +64,5 @@ nmap <silent> <leader>vC
 
 " Get the current highlight group. Useful for then remapping the color
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-map <leader>hi! :so $VIMRUNTIME/syntax/hitest.vim<CR>| " Output all current highlights
+map <leader>!hi :so $VIMRUNTIME/syntax/hitest.vim<CR>| " Output all current highlights
 

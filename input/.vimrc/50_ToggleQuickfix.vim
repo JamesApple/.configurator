@@ -8,8 +8,6 @@ augroup quickFixSettings
         \ nnoremap <buffer> <silent> <Esc> :close<CR>
 augroup END
 
-
-
 function! GetBufferList()
   redir =>buflist
   silent! ls!
@@ -21,7 +19,12 @@ function! ToggleList(bufname, pfx)
   let buflist = GetBufferList()
   for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
-      exec(a:pfx.'close')
+      if a:pfx == 'l'
+        exec('lclose')
+      endif
+      if a:pfx == 'C'
+        exec('cclose')
+      endif
       return
     endif
   endfor

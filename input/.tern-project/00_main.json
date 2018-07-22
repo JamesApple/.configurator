@@ -1,10 +1,6 @@
 {
   "ecmaVersion": 7,
-  "libs": [
-    "browser",
-    "ecmascript",
-    "react"
-  ],
+  "libs": ["browser", "ecmascript", "react"],
   "plugins": {
     "doc_comment": {
       "fullDocs": true,
@@ -22,6 +18,15 @@
       "modules": ["node_modules"]
     }
   },
-  "loadEagerly": ["**/*.js"],
+  "loadEagerly": [
+    "*/*/*/*/*/*/*/*.js",
+    "*/*/*/*/*/*/*.js",
+    "*/*/*/*/*/*.js",
+    "*/*/*/*/*.js",
+    "*/*/*/*.js",
+    "*/*/*.js",
+    "*/*.js",
+    "*.js"
+  ],
   "dontLoad": ["node_modules/**"]
 }
