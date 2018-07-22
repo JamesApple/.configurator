@@ -1,12 +1,11 @@
-set history=500                                                                 "Store lots of :cmdline history
-set title                                                                       "change the terminal's title
+set history=500           " Store lots of :cmdline history
+set title                 " change the terminal's title
 set splitbelow
 set cmdheight=2
 set conceallevel=2
-set exrc                                                                        "Allow using local vimrc
-set secure                                                                      "Forbid autocmd in local vimrc
-
-set grepprg=rg\ --vimgrep                                                       "Use ripgrep for grepping
+set exrc                  " Allow using local vimrc
+set secure                " Forbid autocmd in local vimrc
+set grepprg=rg\ --vimgrep " Use ripgrep for grepping
 
 " Misc
 set clipboard=unnamed,unnamedplus " Paste and yank always use system board
@@ -101,7 +100,7 @@ set autoindent
 set smartindent   " Automagically add smart indents after a break
 
 augroup vimrc
-  autocmd FocusGained,BufEnter * checktime                                    "Refresh file when vim gets focus
+  autocmd FocusGained,BufEnter * checktime " Refresh file when vim gets focus
 augroup END
 
 augroup BgHighlight

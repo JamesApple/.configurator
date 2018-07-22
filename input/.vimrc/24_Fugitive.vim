@@ -12,6 +12,9 @@ nnoremap <leader>gl :Glog<CR>|      " (l)og
 nnoremap <leader>gd :Gvdiff<CR>|    " (d)iff
 nnoremap <leader>gbl :Gblame<CR>|    " (bl)ame
 nnoremap <leader>gbr :Twiggy<CR>|    " (br)anch
+nnoremap <space>gc :!git commit -m ''<Left>
+nnoremap <leader>gv :Gitv!<CR>
+nnoremap <leader>gV :Gitv<CR>
 
 nnoremap <space>ga :Dispatch! git add %:p<CR>
 nnoremap <space>gs :Gstatus<CR>
@@ -24,8 +27,6 @@ nnoremap <space>gr :Gread<CR>
 nnoremap <space>gw :Gwrite<CR><CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gc :!git commit -m ''<Left>
-nnoremap <leader>gC :Gitv!<CR>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
 
