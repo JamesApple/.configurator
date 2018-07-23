@@ -6,6 +6,7 @@ Plug 'tpope/vim-endwise', { 'for': [ 'ruby' ] }                     " Add end af
 Plug 'tpope/vim-unimpaired'                                         " Many helper functions
 Plug 'tpope/vim-repeat'                                             " Many helper functions
 Plug 'tpope/vim-obsession', { 'on': 'Obsession' }                   " Many helper functions
+Plug 'wellle/targets.vim'
 
 Plug 'google/vim-searchindex'                                       " Adds search numbers
 Plug 'editorconfig/editorconfig-vim'                                " Set indentation and etc based on project

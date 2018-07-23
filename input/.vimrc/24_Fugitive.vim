@@ -4,35 +4,28 @@ Plug 'sodapopcan/vim-twiggy', { 'on': ['Twiggy'] } " Git branch fugitive plugin
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'jreybert/vimagit', { 'on': ['Magit'] }
 
-" (g)it
-" nnoremap <leader>gc :Gcommit<CR>|   " (c)ommit
-nnoremap <leader>gm :Gmerge<Space>| " (m)erge
-nnoremap <leader>gf :Gfetch<Space>| " (f)etch
-nnoremap <leader>gl :Glog<CR>|      " (l)og
-nnoremap <leader>gd :Gvdiff<CR>|    " (d)iff
-nnoremap <leader>gbl :Gblame<CR>|    " (bl)ame
-nnoremap <leader>gbr :Twiggy<CR>|    " (br)anch
-nnoremap <space>gc :!git commit -m ''<Left>
-nnoremap <leader>gv :Gitv!<CR>
-nnoremap <leader>gV :Gitv<CR>
 
-nnoremap <space>ga :Dispatch! git add %:p<CR>
+" Branch
+nnoremap <leader>gb :Twiggy<CR>|    " (br)anch
+" nnoremap <leader>gbl :Gblame<CR>|    " (bl)ame, I don't use this very much
+
+" Commit
+nnoremap <space>gc :!git commit -m ''<Left>
+
+" Commit browser
+nnoremap <leader>gl :Gitv!<CR>
+nnoremap <leader>gL :Gitv<CR>
+
+" Add folder / File or interactive staging
+nnoremap <space>ga :Magit<CR>
+nnoremap <space>gA :Dispatch! git add %:p<CR>
+
 nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gS :Magit<CR>
-" nnoremap <space>gc :Gcommit -v -q<CR>
-" nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gm :Gmove<Space>
+
+nnoremap <leader>gd :Gvdiff<CR>
+
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
-
-nnoremap <Leader>g- :Silent Git stash<CR>:e<CR>
-nnoremap <Leader>g+ :Silent Git stash pop<CR>:e<CR>
-
 
 xnoremap dp :diffput<CR>
 xnoremap do :diffget<cr>
