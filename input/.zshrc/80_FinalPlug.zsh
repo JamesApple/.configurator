@@ -1,0 +1,1 @@
+zplug load # --verbose

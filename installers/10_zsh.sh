@@ -3,6 +3,8 @@ brew install \
   zsh-syntax-highlighting \
   zsh-completions
 
+# Install marker
+mkdir ~/.marker && git clone https://github.com/pindexis/marker ~/.marker && cd ~/.marker && ./install.py
 export SHELL=/bin/zsh
 
 # Install oh-my-zsh
