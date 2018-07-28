@@ -1,6 +1,10 @@
 Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
+
+nnoremap <leader>se :UltiSnipsEdit<CR>
+
+
 let g:UltiSnipsSnippetsDir = '~/configurator/snippets'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/configurator/snippets']
 let g:UltiSnipsEditSplit = 'vertical'

@@ -19,3 +19,4 @@ Plug 'gavocanov/vim-js-indent'                                          " JS Ind
 Plug 'elzr/vim-json'
 let g:used_javascript_libs = 'underscore,vue,jquery,react'
 
+Plug 'MicahElliott/Rocannon'

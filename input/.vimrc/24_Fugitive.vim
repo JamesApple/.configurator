@@ -10,25 +10,31 @@ nnoremap <leader>gb :Twiggy<CR>|    " (br)anch
 " nnoremap <leader>gbl :Gblame<CR>|    " (bl)ame, I don't use this very much
 
 " Commit
-nnoremap <space>gc :!git commit -m ''<Left>
+nnoremap <leader>gc :!git commit -m ''<Left>
 
 " Commit browser
 nnoremap <leader>gl :Gitv!<CR>
 nnoremap <leader>gL :Gitv<CR>
 
 " Add folder / File or interactive staging
-nnoremap <space>ga :Magit<CR>
-nnoremap <space>gA :Dispatch! git add %:p<CR>
+nnoremap <leader>ga :Magit<CR>
+nnoremap <leader>gA :Dispatch! git add %:p<CR>
 
-nnoremap <space>gs :Gstatus<CR>
+nnoremap <leader>gs :Gstatus<CR>
 
 nnoremap <leader>gd :Gvdiff<CR>
 
-nnoremap <space>gps :Dispatch! git push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <leader>gps :Dispatch! git push<CR>
+nnoremap <leader>gpl :Dispatch! git pull<CR>
 
 xnoremap dp :diffput<CR>
 xnoremap do :diffget<cr>
+
+" FZF Required
+" nnoremap <silent><leader>gs :GFiles?<CR>| " Search changed files by git Status
+" nnoremap <silent><leader>gl :Commits<CR>| " Search all commits
+" nnoremap <silent><leader>gL :BCommits<CR>| " Search current file commits
+
 
 augroup  fugitive_buffers
   " Map .. to go up in trees and blobs
