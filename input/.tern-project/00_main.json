@@ -18,15 +18,6 @@
       "modules": ["node_modules"]
     }
   },
-  "loadEagerly": [
-    "*/*/*/*/*/*/*/*.js",
-    "*/*/*/*/*/*/*.js",
-    "*/*/*/*/*/*.js",
-    "*/*/*/*/*.js",
-    "*/*/*/*.js",
-    "*/*/*.js",
-    "*/*.js",
-    "*.js"
-  ],
-  "dontLoad": ["node_modules/**"]
+  "loadEagerly": [],
+  "dontLoad": []
 }

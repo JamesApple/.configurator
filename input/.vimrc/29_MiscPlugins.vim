@@ -14,3 +14,4 @@ Plug 'AndrewRadev/splitjoin.vim'                                    " gJ gS to s
 
 Plug 'djdt/pyparens.nvim', { 'do': ':UpdateRemotePlugins' }         " Highlight the braces I'm currently inside
 let g:pyparens_hl_col_group = 'FoldColumn'
+

@@ -1,8 +1,12 @@
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 if [[ "$TERM" != 'dumb' ]]; then
+
+  # Compinit speedhack
+  autoload -Uz compinit
+  if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+    compinit
+  else
+    compinit -C
+  fi
 
   # setopt COMPLETE_ALIASES  # This is the stupidest setting
   setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
@@ -13,6 +17,11 @@ if [[ "$TERM" != 'dumb' ]]; then
   setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
   setopt MENU_COMPLETE       # Do autoselect the first completion entry.
   unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
+
+  # Cache completions
+  zstyle ':completion:*' accept-exact '*(N)'
+  zstyle ':completion:*' use-cache on
+  zstyle ':completion:*' cache-path ~/.zsh/cache
 
   # Treat these characters as part of a word.
   WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
@@ -130,3 +139,4 @@ if [[ "$TERM" != 'dumb' ]]; then
   zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^*.*' '*@*'
   zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^<->.<->.<->.<->' '127.0.0.<->'
 fi
+

@@ -1,17 +1,39 @@
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob  "!.git/"'
-# FASD Movements
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-# FASD Delayed loading
+# Setup FZF defaults
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="$PATH:/usr/local/opt/fzf/bin"
+fi
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+# Setup FASD
 eval "$(fasd --init zsh-hook)"
 
+export FZF_COMPLETION_TRIGGER='*'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob  "!.git/"'
+
+
+# (s)earch (c)hrome
+sc() {
+  local cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+  \cp -f ~/Library/Application\ Support/Google/Chrome/Default/History /tmp/h
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from urls order by last_visit_time desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
+}
+
+
+# (J)ump
 j() {
   local dir
   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
 
+
+# (s)earch (t)ext
 st() {
   local file
   file="$(rg --column --follow --hidden --line-number --hidden --no-heading --color=always --smart-case $@  | fzf --ansi -0 -1  | awk -F: '{print $1 " +" $2}')"
@@ -25,11 +47,13 @@ st() {
   fi
 }
 
+
 sf() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
 
 sd() {
   local dir
@@ -37,6 +61,7 @@ sd() {
     -o -type d -print 2> /dev/null | fzf +m) &&
     cd "$dir"
 }
+
 
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
@@ -46,28 +71,6 @@ tm() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-scb() {
-  local cols sep google_history open
-  cols=$(( COLUMNS / 3 ))
-  sep='{::}'
-  if [ "$(uname)" = "Darwin" ]; then
-    google_history="$HOME/Library/Application Support/Google/Chrome/Default/History"
-    open=open
-  else
-    google_history="$HOME/.config/google-chrome/Default/History"
-    open=xdg-open
-  fi
-  cp -f "$google_history" /tmp/h
-  sqlite3 -separator $sep /tmp/h \
-    "select substr(title, 1, $cols), url
-  from urls order by last_visit_time desc" |
-    awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
-    fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs $open > /dev/null 2> /dev/null
-}
-
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
 
 gl() {
   git log --graph --color=always \
@@ -79,4 +82,3 @@ gl() {
   {}
   FZF-EOF"
 }
-
