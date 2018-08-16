@@ -1,4 +1,3 @@
-
 nnoremap Y y$ | " Makes Y consistent with D
 
 " Invert mark jumping keys
@@ -33,10 +32,6 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <Up> <NOP>
 noremap <Down> <NOP>
-" inoremap <Left> <NOP>
-" inoremap <Right> <NOP>
-" inoremap <Up> <NOP>
-" inoremap <Down> <NOP>
 
 " Indent entire file
 nnoremap == mzgg=G`z

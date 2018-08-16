@@ -1,4 +1,4 @@
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator' " Allow <C-H/J/K/L> movement between vim and tmux splits
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

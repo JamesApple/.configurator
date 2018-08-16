@@ -1,5 +1,5 @@
-Plug 'ajmwagar/vim-deus', { 'on': 'Colors' }
-Plug 'rakr/vim-one'
+Plug 'ajmwagar/vim-deus', { 'on': 'Colors' } " For when I'm tired of One dark
+Plug 'rakr/vim-one'                          " For when I'm tired of deus
 
 set termguicolors
 set background=dark

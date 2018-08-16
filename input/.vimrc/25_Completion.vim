@@ -1,54 +1,41 @@
-" https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
-"https://github.com/ramitos/jsctags
-" https://medium.com/@jrwillette88/tern-why-it-breaks-and-how-to-fix-it-8d1677df05f9
-" Debug Commands
-" let g:deoplete#enable_profile = 1
-" call deoplete#custom#source('tern', 'debug_enabled', 1)<CR>
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'Shougo/denite.nvim'
 
-" Mandatory plumbing for typescript build
-function! BuildTS(info)
-  if a:info.status == 'installed' || a:info.force || a:info.status == 'updated'
-    !yarn global add typescript
-    !./install.sh
-    UpdateRemotePlugins
-  endif
+set cmdheight=2
+set signcolumn=yes
+" Show signature help while editing
+autocmd CursorHoldI,CursorMovedI * silent! call CocAction('showSignatureHelp')
+
+" use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" Completion Tooling
-Plug 'Shougo/deoplete.nvim', " Completion Manager
-      \{ 'do': ':UpdateRemotePlugins' } 
-Plug 'Shougo/echodoc.vim'
-Plug 'ervandew/supertab'
-" Completion Sources
-Plug 'Shougo/neco-syntax'           " Completion from syntax file
-Plug 'Shougo/neco-vim',             " Vim Source
-      \{ 'for': ['vim'] }
-Plug 'carlitux/deoplete-ternjs',    " Javascript source
-      \{ 'for': ['javascript', 'javascript.jsx'], 
-      \'do': 'npm install -g tern' }
-Plug 'mhartington/nvim-typescript', " Incredible typescript source
-      \{ 'for': ['typescript']
-      \'do': function('BuildTS') }
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-set completeopt+=menuone,noinsert,noselect " Completion styles
-set completeopt-=preview " Don't pop up terrible window
-set cmdheight=2 " Needed for echodoc to display completion docs
+" Use `:Format` for format current file
+command! -nargs=0 Format :call CocAction('format')
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  :Format<cr>
 
-let g:echodoc_enable_at_startup=1
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-let g:deoplete#enable_at_startup = 1
-let deoplete#tag#cache_limit_size = 5000000 " Increase tag cache size for mega projects
-let g:deoplete#auto_complete_delay = 0
-let g:deoplete#enable_camel_case = 1
-
-" Tern
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#include_keywords = 1
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ ]
-
-
+" Disable K looking up stuff
+map K <Nop>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

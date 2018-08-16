@@ -1,5 +1,5 @@
-Plug 'tpope/vim-dispatch'
-Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch' " Asynchronous jobs
+Plug 'janko-m/vim-test'   " Asynchronous multi-language testing
 
 
 nnoremap <leader>tf :TestFile<CR>

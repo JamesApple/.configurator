@@ -1,4 +1,4 @@
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter' " Display git status of lines in buffer
 
 
 nnoremap <silent> <leader>ghn :GitGutterNextHunk<CR>| " (g)it (h)unk (n)ext

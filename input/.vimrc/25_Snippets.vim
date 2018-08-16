@@ -1,4 +1,4 @@
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips' " Yeah it's snippets
 " Plug 'honza/vim-snippets'
 
 

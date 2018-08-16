@@ -1,5 +1,4 @@
 nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-" This originaly had a lowercase C, but I only use quickfix with dispatch
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'C')<CR>
 
 augroup quickFixSettings

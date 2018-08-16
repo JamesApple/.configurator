@@ -72,6 +72,7 @@ set foldlevelstart=5 " Fold only after N deep
 " Search
 set hlsearch   " Show highlights for search words
 set incsearch  " Show matches as they're typed
+set inccommand=nosplit " Interactively show :%s/replace/method
 set ignorecase " Ignore letter case
 set smartcase  " Ovveride ignore case when capitals are present
 set gdefault   " Search / Substitution commands no longer need 'g'

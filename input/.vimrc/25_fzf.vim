@@ -1,21 +1,14 @@
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Ultimate search plugin
+Plug 'junegunn/fzf.vim'                                           " Same
 set rtp+=/usr/local/opt/fzf
 
 
-" nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-" nnoremap <silent><leader>sf :GFiles<CR>| " (s)earch (f)iles in repo
 nnoremap <silent><leader>sf :FZF<CR>| " (s)earch (f)iles in repo
 
 nnoremap <silent><leader>sb :Buffers<CR>| " (s)earch (b)uffers
 nnoremap <silent><leader>sh :History<CR>| " (s)earch (h)istory
-" nnoremap <silent><leader>st :Tags<CR>| " (s)earch all (t)ags
 nnoremap <silent><leader>st :Rg<CR>| " (gr)ep all text in root directory
-" nnoremap <silent><leader>st :Rg<CR>| " (gr)ep all text in root directory
 
-
-" vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>| " (K)all search
-" nnoremap <silent> K :call SearchWordWithAg()<CR>| " (K)all search
 
 " Search mappings for current mode
 nmap <leader><Tab> <plug>(fzf-maps-n)

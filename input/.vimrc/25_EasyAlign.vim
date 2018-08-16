@@ -1,4 +1,4 @@
-Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
+Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' } " Use tab to align on something super easily
 
 
 vnoremap <silent> <Tab> :EasyAlign<cr>

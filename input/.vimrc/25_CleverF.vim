@@ -1,3 +1,4 @@
+" Allows cross line f and t commands
 " Plug 'rhysd/clever-f.vim'
 
 

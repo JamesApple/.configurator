@@ -1,4 +1,5 @@
-Plug 'tpope/vim-abolish'             " Adds coercion and search and replace
+" Coercion, clever search n' replace and typo fixer
+Plug 'tpope/vim-abolish'
 
 " Replace within block
 nnoremap <leader>r :'{,'}Subvert/<c-r><c-w>//g<left><left>

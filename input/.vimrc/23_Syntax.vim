@@ -10,7 +10,8 @@ Plug 'othree/html5.vim', { 'for': ['html', 'jsx', 'vue'] }              " HTML5
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }                             " Rails
 Plug 'tpope/vim-haml', { 'for': ['haml'] }                              " HAML
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                           " Ruby
-Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': ['ruby'] }
+Plug 'joker1007/vim-ruby-heredoc-syntax', { 'for': ['ruby'] }           " Ruby HEREDOC
+
 Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }          " TS
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
 Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
@@ -19,4 +20,3 @@ Plug 'gavocanov/vim-js-indent'                                          " JS Ind
 Plug 'elzr/vim-json'
 let g:used_javascript_libs = 'underscore,vue,jquery,react'
 
-Plug 'MicahElliott/Rocannon'

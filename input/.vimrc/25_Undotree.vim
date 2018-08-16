@@ -1,5 +1,5 @@
 if has("persistent_undo")
-  Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+  Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' } " Better file history than git
 
 
   nmap <leader>u :UndotreeToggle<CR>
