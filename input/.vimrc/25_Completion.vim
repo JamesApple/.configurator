@@ -1,5 +1,5 @@
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'Shougo/denite.nvim'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " I only use completion from this, but it works really well
+" Plug 'Shougo/neco-vim'                                     " Completion for vim filetype
 
 set cmdheight=2
 set signcolumn=yes
@@ -17,11 +17,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use `:Format` for format current file
-command! -nargs=0 Format :call CocAction('format')
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  :Format<cr>
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
