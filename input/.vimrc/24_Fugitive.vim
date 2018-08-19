@@ -17,7 +17,7 @@ nnoremap <leader>gL :Gitv<CR>
 
 " Add folder / File or interactive staging
 nnoremap <leader>ga :Magit<CR>
-nnoremap <leader>gA :Dispatch! git add %:p<CR>
+nnoremap <leader>gA :!git add %<CR>| ":Dispatch! git add %:p<CR>
 
 nnoremap <leader>gs :Gstatus<CR>
 
