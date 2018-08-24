@@ -66,7 +66,6 @@ set foldopen=
       \percent,
       \search
 set foldmethod=indent " Always fold on indents, syntax is too heavy
-set foldlevelstart=5 " Fold only after N deep
 
 
 " Search
