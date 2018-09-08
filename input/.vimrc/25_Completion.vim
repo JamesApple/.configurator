@@ -53,13 +53,3 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'vue',
                 \ ]
 
-
-map K <Nop>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  elseif &filetype
-    call CocAction('doHover')
-  endif
-endfunction
