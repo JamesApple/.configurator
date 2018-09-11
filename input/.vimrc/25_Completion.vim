@@ -29,7 +29,7 @@ Plug 'carlitux/deoplete-ternjs',    " Javascript source
 Plug 'mhartington/nvim-typescript', " Incredible typescript source
       \{ 'for': ['typescript']
       \'do': function('BuildTS') }
-
+let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt+=menuone,noinsert,noselect " Completion styles
 set completeopt-=preview " Don't pop up terrible window
 set cmdheight=2 " Needed for echodoc to display completion docs

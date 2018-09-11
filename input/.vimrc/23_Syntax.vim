@@ -15,7 +15,6 @@ Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }          " TS
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
 Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
 Plug 'othree/javascript-libraries-syntax.vim'                           " JS Frameworks
-Plug 'gavocanov/vim-js-indent'                                          " JS Indents
 Plug 'elzr/vim-json'
 let g:used_javascript_libs = 'underscore,vue,jquery,react'
 

@@ -1,5 +1,5 @@
 source ~/.zplug/init.zsh
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 
 autoload -U promptinit; promptinit

@@ -1,3 +1,28 @@
+# We use a little hack so that the snippet is expanded
+# and parsed correctly
+snippet usnip "Ultisnips snippet definition" b
+# comment
+`!p snip.rv = "snippet"` ${1:Tab_trigger} "${2:Description}" ${3:b}
+${0:${VISUAL}}
+`!p snip.rv = "endsnippet"`
+endsnippet
+
+snippet global "Global snippet" b
+`!p snip.rv = "global"` !p
+${0:${VISUAL}}
+`!p snip.rv = "endglobal"`
+endsnippet
+
+snippet vis "${VISUAL}" i
+\$\{VISUAL${1:${2:default}${3:/transform/}}\}
+endsnippet
+
+snippet up "Unique Pointer" i
+std::unique_ptr<${1:`!p
+snip.rv = snip.v.text.strip("*") or "klass"
+`}>
+endsnippet
+
 snippet inline "Inline completion example" i
 .classList.remove('$1')
 endsnippet
@@ -18,5 +43,20 @@ tags: $3
 ---
 # $1
 $0
+endsnippet
+
+# Global block gives access to the contained scope
+global !p
+def fraction(a, b):
+    try:
+        return "%.1f" % (float(a)/float(b))
+    except (ValueError, ZeroDivisionError):
+        return "ERR"
+endglobal
+
+snippet 75wrds "Log a 750words.com session" b
+750words.com: ${1:750} words in ${2:20} minutes - `!p
+snip.rv = fraction(t[1], t[2])
+` wpm.
 endsnippet
 
