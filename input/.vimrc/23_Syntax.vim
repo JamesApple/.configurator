@@ -11,7 +11,6 @@ Plug 'tpope/vim-rails', { 'for': ['ruby'] }                             " Rails
 Plug 'tpope/vim-haml', { 'for': ['haml'] }                              " HAML
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                           " Ruby
 
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }          " TS
 Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
 Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
