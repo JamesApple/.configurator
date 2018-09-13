@@ -78,9 +78,12 @@ set gdefault   " Search / Substitution commands no longer need 'g'
 
 
 " Cursor
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 set cursorline          " Highlight current line
 " set virtualedit=onemore " Allow cursor to move just past the end of a line
 set scrolloff=999       " Keep cursor in middle of screen
@@ -100,11 +103,16 @@ set autoindent
 set smartindent   " Automagically add smart indents after a break
 
 augroup vimrc
+  autocmd!
   autocmd FocusGained,BufEnter * checktime " Refresh file when vim gets focus
 augroup END
 
 augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
+  autocmd!
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
 augroup END
+
+highlight Comment cterm=italic
+highlight vimComment cterm=italic
+

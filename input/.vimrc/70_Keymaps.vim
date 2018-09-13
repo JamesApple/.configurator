@@ -21,6 +21,9 @@ inoremap <C-w>j <ESC><C-w>j
 inoremap <C-w>l <ESC><C-w>l
 inoremap <C-w>h <ESC><C-w>h
 
+nnoremap M 15j
+nnoremap L 15k
+
 " nnoremap <C-h> <C-w><Left>
 " nnoremap <C-l> <C-w><Right>
 " nnoremap <C-k> <C-w><Up>

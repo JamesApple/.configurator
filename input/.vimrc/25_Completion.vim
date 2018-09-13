@@ -25,7 +25,8 @@ Plug 'Shougo/neco-vim',             " Vim Source
       \{ 'for': ['vim'] }
 Plug 'carlitux/deoplete-ternjs',    " Javascript source
       \{ 'for': ['javascript', 'javascript.jsx'], 
-      \'do': 'npm install -g tern' }
+      \'do': 'yarn global add tern' }
+Plug 'ternjs/tern_for_vim'
 Plug 'mhartington/nvim-typescript', " Incredible typescript source
       \{ 'for': ['typescript']
       \'do': function('BuildTS') }
@@ -38,7 +39,7 @@ let g:echodoc_enable_at_startup=1
 
 let g:deoplete#enable_at_startup = 1
 let deoplete#tag#cache_limit_size = 5000000 " Increase tag cache size for mega projects
-let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_delay = 500
 let g:deoplete#enable_camel_case = 1
 
 let g:nvim_typescript#max_completion_detail = 15
@@ -52,4 +53,5 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'javascript.jsx',
                 \ 'vue',
                 \ ]
-
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]

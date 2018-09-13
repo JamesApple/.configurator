@@ -5,5 +5,6 @@ set termguicolors
 set background=dark
 
 augroup  colorscheme_definition
+  autocmd!
   au VimEnter * colorscheme one| " Must be loaded after plugin
 augroup END

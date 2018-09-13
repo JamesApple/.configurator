@@ -1,0 +1,31 @@
+snippet it "It test block" b
+it('$1', () => {
+	${0:${VISUAL}}
+})
+endsnippet
+
+snippet describe "Describe test block" b
+describe('$1', () => {
+	${0:${VISUAL}}
+})
+endsnippet
+
+snippet contect "Context test block" b
+context('$1', () => {
+	${0:${VISUAL}}
+})
+endsnippet
+
+snippet expect "Expectation test" b
+expect($1)$2
+endsnippet
+
+snippet map "inline map" i
+map((${1:Args}) => $1$2)
+endsnippet
+
+snippet reduce "inline reduce" i
+reduce((${1:Accumulator}, ${2:Item}) => {
+	$3
+})
+endsnippet

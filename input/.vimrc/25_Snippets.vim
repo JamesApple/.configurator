@@ -1,4 +1,5 @@
 Plug 'SirVer/ultisnips' " Yeah it's snippets
+Plug 'honza/vim-snippets'
 
 
 nnoremap <leader>se :UltiSnipsEdit<CR>| " Edit snippets for current FT

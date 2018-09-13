@@ -1,6 +1,6 @@
 source ~/.zplug/init.zsh
-export TERM="screen-256color"
-
+# export TERM="screen-256color"
+export TERM="xterm-256color-italic"
 
 autoload -U promptinit; promptinit
 prompt purer
