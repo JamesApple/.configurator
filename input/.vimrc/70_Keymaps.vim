@@ -7,6 +7,12 @@ nnoremap ` '
 " Move to first character at SOL above
 nnoremap <Backspace> -
 
+" Move around using C-h|j|k|l in insert mode
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
 " Keep search results in center of screen
 nmap n nzz
 nmap N Nzz
