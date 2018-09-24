@@ -30,6 +30,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'mhartington/nvim-typescript', " Incredible typescript source
       \{ 'for': ['typescript']
       \'do': function('BuildTS') }
+
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt+=menuone,noinsert,noselect " Completion styles
 set completeopt-=preview " Don't pop up terrible window

@@ -12,9 +12,18 @@ Plug 'tpope/vim-haml', { 'for': ['haml'] }                              " HAML
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                           " Ruby
 
 Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript'] }          " TS
-Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
-Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
+
 Plug 'othree/javascript-libraries-syntax.vim'                           " JS Frameworks
+Plug 'jparise/vim-graphql'
 Plug 'elzr/vim-json'
 let g:used_javascript_libs = 'underscore,vue,jquery,react'
 
+" Trialling new syntax
+" Plug 'othree/yajs.vim', { 'for': ['javascript', 'vue'] }                " JS
+" Plug 'mxw/vim-jsx', { 'for': ['jsx'] }                                  " JSX
+
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+" Pangloss JS settings
+let g:javascript_plugin_flow = 1
+let g:javascript_plugin_jsdoc = 1

@@ -1,6 +1,7 @@
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 alias g='git'
+
 # Next highest folder with .git
 alias tl='git rev-parse --show-toplevel'
 alias timeout='gtimeout'
@@ -11,6 +12,7 @@ alias be='b exec'
 alias ber='be rails'
 alias bu='bundle update'
 alias bi='bundle install'
+
 # Rails Aliases
 alias berg='ber generate'
 alias berc='ber console'
@@ -20,6 +22,15 @@ alias berr='ber routes'
 # Docker Aliases
 alias d='docker'
 alias dc='docker-compose'
+
+# Suffix aliases. 
+# $ index.html 
+# With alias -s html='vim' runs: 
+# $ vim index.html
+alias -s html=vim
+alias -s js=vim
+alias -s md=vim
+alias -s rb=vim
 
 
 # LS commands
@@ -51,6 +62,9 @@ alias rm='nocorrect rm -i'
 alias get='curl --continue-at - --location --progress-bar --remote-name'
 alias mkdir='nocorrect mkdir -p'
 alias mv='nocorrect mv -i'
+
+alias -g X='| xargs'
+alias -g X%='| xargs -I %'
 
 alias -g G='| grep --color'
 alias grep='() { $(whence -p grep) --color=auto $@ }'
