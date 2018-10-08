@@ -23,13 +23,14 @@ Plug 'ervandew/supertab'
 Plug 'Shougo/neco-syntax'           " Completion from syntax file
 Plug 'Shougo/neco-vim',             " Vim Source
       \{ 'for': ['vim'] }
-Plug 'carlitux/deoplete-ternjs',    " Javascript source
-      \{ 'for': ['javascript', 'javascript.jsx'], 
-      \'do': 'yarn global add tern' }
-Plug 'ternjs/tern_for_vim'
+" Plug 'carlitux/deoplete-ternjs',    " Javascript source
+"       \{ 'for': ['javascript', 'javascript.jsx'], 
+"       \'do': 'yarn global add tern' }
+" Plug 'ternjs/tern_for_vim'
 Plug 'mhartington/nvim-typescript', " Incredible typescript source
       \{ 'for': ['typescript']
       \'do': function('BuildTS') }
+Plug 'wokalski/autocomplete-flow', { 'for': ['javascript', 'javascript.jsx'] }
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt+=menuone,noinsert,noselect " Completion styles
@@ -46,13 +47,13 @@ let g:deoplete#enable_camel_case = 1
 let g:nvim_typescript#max_completion_detail = 15
 let g:nvim_typescript#type_info_on_hold = 1
 
-" Tern
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ ]
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+" " Tern
+" let g:deoplete#sources#ternjs#types = 1
+" let g:deoplete#sources#ternjs#docs = 1
+" let g:deoplete#sources#ternjs#filetypes = [
+"                 \ 'jsx',
+"                 \ 'javascript.jsx',
+"                 \ 'vue',
+"                 \ ]
+" let g:tern#command = ["tern"]
+" let g:tern#arguments = ["--persistent"]

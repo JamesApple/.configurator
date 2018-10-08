@@ -65,8 +65,6 @@
 [push]
   default = current
 
-[init]
-  templatedir = ~/.git_template
 
 [diff]
   tool = nvr

@@ -70,6 +70,10 @@ alias -g G='| grep --color'
 alias grep='() { $(whence -p grep) --color=auto $@ }'
 alias egrep='() { $(whence -p egrep) --color=auto $@ }'
 
+flow-watch () {
+  yarn flow status;
+  fswatch -e '!(.*\.js)' -o app/javascript | xargs -n1 -I{} yarn flow status;
+}
 
 alias irb="pry"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
