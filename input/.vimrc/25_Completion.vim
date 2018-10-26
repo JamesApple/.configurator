@@ -23,7 +23,8 @@ Plug 'ervandew/supertab'
 Plug 'Shougo/neco-syntax'           " Completion from syntax file
 Plug 'Shougo/neco-vim',             " Vim Source
       \{ 'for': ['vim'] }
-" Plug 'carlitux/deoplete-ternjs',    " Javascript source
+" Plug 'carlitux/deoplete-ternjs',    " Vanilla Javascript source. Keep this here for
+" different computer / dev setups
 "       \{ 'for': ['javascript', 'javascript.jsx'], 
 "       \'do': 'yarn global add tern' }
 " Plug 'ternjs/tern_for_vim'
@@ -41,19 +42,7 @@ let g:echodoc_enable_at_startup=1
 
 let g:deoplete#enable_at_startup = 1
 let deoplete#tag#cache_limit_size = 5000000 " Increase tag cache size for mega projects
-let g:deoplete#auto_complete_delay = 500
 let g:deoplete#enable_camel_case = 1
 
 let g:nvim_typescript#max_completion_detail = 15
 let g:nvim_typescript#type_info_on_hold = 1
-
-" " Tern
-" let g:deoplete#sources#ternjs#types = 1
-" let g:deoplete#sources#ternjs#docs = 1
-" let g:deoplete#sources#ternjs#filetypes = [
-"                 \ 'jsx',
-"                 \ 'javascript.jsx',
-"                 \ 'vue',
-"                 \ ]
-" let g:tern#command = ["tern"]
-" let g:tern#arguments = ["--persistent"]

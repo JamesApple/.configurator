@@ -25,7 +25,6 @@ sc() {
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
-
 # (J)ump
 j() {
   local dir

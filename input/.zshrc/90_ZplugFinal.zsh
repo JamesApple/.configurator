@@ -5,5 +5,4 @@ if ! zplug check; then
 fi
 zplug load # --verbose
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 set monitor

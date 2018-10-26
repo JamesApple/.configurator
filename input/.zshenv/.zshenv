@@ -12,3 +12,10 @@ if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
     alias nvim='echo "No nesting!"'
   fi
 fi
+
+# Quickfix pyenv
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export PYENV_ROOT=/usr/local/var/pyenv
+
+# Trying zsh completion in vim
+zmodload zsh/zpty

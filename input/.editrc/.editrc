@@ -1,0 +1,4 @@
+# .editrc is like .inputrc but it works for pry / IRB etc
+bind -v
+bind "^R" em-inc-search-prev
+bind \\t rl_complete

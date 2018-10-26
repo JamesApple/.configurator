@@ -5,6 +5,8 @@ alias e="$EDITOR"
 alias vim="$EDITOR"
 alias vi="$EDITOR"
 
+alias onport='lsof -wni tcp:3000'
+
 # Misc
 alias c='clear'
 

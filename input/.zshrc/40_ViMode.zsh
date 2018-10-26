@@ -30,7 +30,7 @@ function cyan () { print '%F{cyan}'"$1"'%f' }
 function magenta () { print '%F{magenta}'"$1"'%f' }
 function yellow () { print '%F{yellow}'"$1"'%f' }
 function update-git-command () {
-  branch="$( git rev-parse --abbrev-ref HEAD )"
+  branch="$( git rev-parse --abbrev-ref HEAD 2&> /dev/null )"
   if [ $? -eq 0 ]; then
     latest_git_status="$(git status --porcelain=v2 --branch)"
     git_branch_indicator="$(yellow "$branch") "
@@ -59,9 +59,8 @@ function insert-entered () {
   set-prompt
 }
 
-
 function set-prompt () {
-  PS1="$FAILURE_INDICATOR$VI_MODE_TITLE $CURRENT_PATH$( red "$ROOT_INDICATOR" )$( echo ':' )$GIT_SEGMENT%b $NEWLINE"
+  PS1="%B$FAILURE_INDICATOR$VI_MODE_TITLE $CURRENT_PATH$( red "$ROOT_INDICATOR" )$( echo ':' )$GIT_SEGMENT%b $NEWLINE"
   zle reset-prompt
 }
 

@@ -3,12 +3,12 @@ Plug 'janko-m/vim-test'   " Asynchronous multi-language testing
 
 
 nnoremap <leader>tf :TestFile<CR>
-nnoremap <leader>tF :TestSuite -strategy=neovim --format documentation<CR>
-nnoremap <leader>ts :TestSuite<CR>
-nnoremap <leader>tS :TestSuite -strategy=neovim --format documentation<CR>
+nnoremap <leader>tF :TestFile<CR>
 nnoremap <leader>tn :TestNearest<CR>
-nnoremap <leader>tl :TestLast<CR>
+nnoremap <leader>tp :TestLast<CR>
 nnoremap <leader>to :TestVisit<CR>
+nnoremap <leader>c  :Console<CR>
+
 
 " Allow r to refresh quickfix window
 nnoremap <leader>Q :Copen<CR>
@@ -20,8 +20,8 @@ augroup END
 
 let test#strategy = "dispatch"
 let test#strategy = {
-      \ 'nearest': 'neovim',
-      \ 'file':    'dispatch_background',
+      \ 'nearest': 'dispatch',
+      \ 'file':    'dispatch',
       \ 'suite':   'dispatch_background',
       \}
 
@@ -32,6 +32,6 @@ let test#ruby#rspec#executable = 'rspec'
 let test#ruby#rspec#options = {
       \ 'nearest': '--format documentation',
       \ 'file':    '--format progress',
-      \ 'suite':   '--format progress --tag "~slow"',
+      \ 'suite':   '--format progress',
       \}
 
