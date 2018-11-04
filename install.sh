@@ -27,7 +27,10 @@ brew install \
   ruby-build \
   dockutil \
   rg \
-  tmux
+  tmux \
+  codemod
+
+
 
 # Applications
 brew cask install \
@@ -88,7 +91,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  \
   && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  \
   && brew install yarn --without-node \
-  && yarn global add neovim
+  && yarn global add neovim jscodeshift
 
 
 # Config Postgres to allow default connections via psql

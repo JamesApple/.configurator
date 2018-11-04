@@ -1,2 +1,8 @@
-#!/bin/bash
+#!/usr/local/bin/zsh
+
 cd ~/configurator && ruby ./.source/config_composer.rb
+
+rm -rf ~/bin > /dev/null \
+  ; mkdir ~/bin \
+  && cp ~/configurator/scripts/**/* ~/bin \
+  && chmod +x ~/bin/**/*

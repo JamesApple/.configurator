@@ -1,0 +1,10 @@
+#!/usr/local/bin/zsh
+
+brew services stop postgresql@9.6 \
+  && brew services start postgresql@9.6 \
+  && rails db:drop \
+  && rails db:create  \
+  && psql platform_development < ~/Desktop/platform-dump \
+  && echo 'User.first.update(password: "Test12345"); User.update_all(encrypted_password: User.first.encrypted_password, opentok_session_id: nil);' \
+  |  rails c \
+  && rails db:migrate

@@ -1060,6 +1060,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideFromDockAndAppSwitcher</key>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<false/>
 	<key>HideScrollbar</key>
@@ -1156,7 +1158,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>450 381 796 486 0 0 1680 1028 </string>
+	<string>450 414 918 452 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>-454 1050 2560 1057 -454 1050 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2173,7 +2175,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>774C2035-A910-4834-895F-F4E0B1EAF084</string>
 	<key>NoSyncLastTipTime</key>
-	<real>562135331.49483395</real>
+	<real>562457012.05902803</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2203,6 +2205,9 @@
 		<string>0019</string>
 		<string>0020</string>
 		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -2268,7 +2273,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-25T21:51:10Z</date>
+	<date>2018-10-29T00:14:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

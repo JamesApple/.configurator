@@ -25,12 +25,16 @@ function! OpenCronos()
   execute 'tabedit '.g:cronos_path.'index.md'
 endfunction
 
+function! SearchCronos()
+  Files g:cronos_path
+endfunction
 
-nnoremap <silent> <leader>?? :call OpenCronos()<CR>
-nnoremap <silent> <leader>s? :Files ~/cronos/<CR>
-nnoremap <leader>?d :call EditDiaryEntryForHumanTime('')<Left><Left>
-nnoremap <leader>?t :call EditDiaryEntryForHumanTime('today')<CR>
-nnoremap <leader>?y :call EditDiaryEntryForHumanTime('yesterday')<CR>
+
+nnoremap <silent> <leader>dd :call OpenCronos()<CR>
+nnoremap <silent> <leader>sd :Files ~/cronos/<CR>
+nnoremap <leader>dn :call EditDiaryEntryForHumanTime('')<Left><Left>
+nnoremap <leader>dt :call EditDiaryEntryForHumanTime('today')<CR>
+nnoremap <leader>dy :call EditDiaryEntryForHumanTime('yesterday')<CR>
 
 autocmd FileType markdown nmap <buffer> gf ge
 
@@ -38,4 +42,5 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
 let g:vim_markdown_autowrite = 1
 
-let g:vim_markdown_fenced_languages = [ 'csharp=cs' ]
+let g:vim_markdown_fenced_languages = [ 'csharp=cs', 'js=javascript' ]
+
