@@ -1,26 +1,33 @@
 #!/bin/zsh
 
-max="$1"
-count="$2"
-date
-START=$(date +%s);
+requests="$1"
+executable="$2"
+arguments="$@[3,-1]"
+executable_command_with_arguments="$@[2,-1]"
 
-get () {
-  echo "Request $1 Started"
-  time \
-  curl -o /dev/null 'https://localhost:3000/graphql' -H 'Pragma: no-cache' -H 'Origin: https://localhost:3000' -H 'Accept-Encoding: gzip, deflate, br' -H 'X-CSRF-TOKEN: Qfn6SJu4QiVO1KiMgiihWJ/VnDI7AXZREqydy3EXfI/8Zh8sigCZZ3049muDKGDEn3wXEZ6aAkQ9d4I0LIYcWA==' -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36' -H 'content-type: application/json' -H 'Accept: */*' -H 'Cache-Control: no-cache' -H 'X-Requested-With: XMLHttpRequest' -H 'Cookie: opentok-network-test=a03a5557-9a0e-4a7d-a7a9-28d0cc28be7d; user.expires_at=IjIwMTgtMTAtMjZUMDE6MTQ6MDQuMTQ3WiI%3D--810fe28396715bc17f14bf25d961fbec6b453f54; user.id=WyIxOGI5M2I5Yy1kYzhkLTRjYTgtOTYwNS0zZjNmNTgxZGE5MDAiLCIyMDE4LTEwLTI2VDAxOjE0OjA0LjE0N1oiXQ%3D%3D--a51bc47389f5e7a440c7c3744747d91f027a3f74; _platform_session=cXBtYXhWcmdTTm9HMmpYWmUwUXRza25nbGRkYW9RV3FqUjFDZ0twY2krWlhZejN4OUdKRW13dWF3eUlrMFRCc21EMzJIaVV0d3A5MGJDT2gwY2tuV3VZRkxOWGZKakVSWkpTOHIzbk1YbkZmOWxQT2ZZaHlPM05RL0FZL3N5bmk1ZXVib25hTTNaaEduQ1RCZjUvTkQyNENHM25kQ0RDS0R1b0JkVnpwSXdBWkcyM1NnTFB0dUFKKy9ZM3RVOWJobkVGM2FKenllNlVMaVlaSkpUWmhCRHp0VHI0QldVcW85N2dyUDFSSittcmtmZXoxdUwzQWoxOUNPZ044bEl2VGhEd2NVTmZvd1hBYVZLdjlLK3hhVVM4M1BZZjJ3NWlONk8weGVQZzhaci9Gb3pWY3YzZ2tYcmJiMWx6bEhIcEpGbUdiN3ZkNGxFMGFXMEtrTlV0T2QxeWcwS08xZTRyd3ZXS1ZnUEQ1djVDcGRWNlpWem9xVWpXYlljNGttaDhNOC80b2N5ODVjNWhidDdVWUNMemxhQT09LS1WZ0J4eENhQkVMSHVJY3d1UXA3ZWdRPT0%3D--7cef6d1936ca8dff2ace46164e8295d339c8f803' -H 'Connection: keep-alive' -H 'Referer: https://localhost:3000/admin/question_sets/UXVlc3Rpb25TZXQtYzg1NGQ1YmItMTBhYy00NDY0LWIyZWQtZDE1ODMwYzExMzhl/questions' --data-binary '{"query":"query QuestionsAdminPage_Query(\n  $question_set_id: ID!\n) {\n  viewer {\n    ...QuestionsAdminPage_viewer\n    question_set(id: $question_set_id) {\n      ...QuestionsAdminPage_question_set\n      id\n    }\n    id\n  }\n}\n\nfragment QuestionsAdminPage_viewer on Viewer {\n  ...QuestionCreate_viewer\n  ...QuestionTable_viewer\n}\n\nfragment QuestionsAdminPage_question_set on QuestionSet {\n  ...QuestionCreate_question_set\n  id\n  questions {\n    ...QuestionTable_questions\n    id\n  }\n}\n\nfragment QuestionCreate_question_set on QuestionSet {\n  id\n}\n\nfragment QuestionTable_questions on Question {\n  __typename\n  ...QuestionDelete_question\n  ...QuestionManageConditionalButton_question\n  ...QuestionOptionsView_question\n  ...QuestionUpdate_question\n  ...SequenceReorderButtons_list\n  ...SequenceReorderButtons_single\n  id\n  kind\n  label\n  question_set {\n    ...QuestionsView_question_set\n    id\n  }\n  required\n  sequence\n}\n\nfragment QuestionDelete_question on Question {\n  id\n}\n\nfragment QuestionManageConditionalButton_question on Question {\n  ...ConditionalCreateButton_question\n  ...QuestionManageConditionScenario_question\n  ...ConditionalTable_question\n  conditionals {\n    ...ConditionalAdvancedTable_conditionals\n    ...ConditionalTable_conditionals\n    id\n  }\n  condition_scenario {\n    id\n  }\n}\n\nfragment QuestionOptionsView_question on Question {\n  id\n}\n\nfragment QuestionUpdate_question on Question {\n  dashboard_label\n  id\n  json_schema {\n    minimum\n    maximum\n  }\n  kind\n  label\n  question_set {\n    id\n  }\n  required\n  ui_schema {\n    widget_type\n  }\n}\n\nfragment SequenceReorderButtons_list on SequenceInterface {\n  __typename\n  id\n  sequence\n}\n\nfragment SequenceReorderButtons_single on SequenceInterface {\n  __typename\n  id\n  sequence\n}\n\nfragment QuestionsView_question_set on QuestionSet {\n  id\n}\n\nfragment ConditionalCreateButton_question on Question {\n  ...ConditionalForm_question\n}\n\nfragment QuestionManageConditionScenario_question on Question {\n  id\n  condition_scenario {\n    ...ConditionScenarioDelete_condition_scenario\n    ...ConditionScenarioUpdate_condition_scenario\n    id\n    equation\n    dependant_question {\n      id\n    }\n  }\n  ...ConditionScenarioCreate_question\n}\n\nfragment ConditionalTable_question on Question {\n  ...ConditionalDeleteButton_question\n}\n\nfragment ConditionalAdvancedTable_conditionals on Conditional {\n  ...ConditionalDeleteButton_conditional\n  id\n  question_option {\n    question {\n      id\n      label\n    }\n    id\n  }\n}\n\nfragment ConditionalTable_conditionals on Conditional {\n  ...ConditionalDeleteButton_conditional\n  id\n  question_option {\n    label\n    question {\n      id\n      label\n    }\n    id\n  }\n}\n\nfragment ConditionalDeleteButton_conditional on Conditional {\n  id\n}\n\nfragment ConditionalDeleteButton_question on Question {\n  id\n  conditionals {\n    id\n  }\n}\n\nfragment ConditionScenarioDelete_condition_scenario on ConditionScenario {\n  id\n  dependant_question {\n    id\n  }\n}\n\nfragment ConditionScenarioUpdate_condition_scenario on ConditionScenario {\n  id\n  equation\n  dependant_question {\n    id\n  }\n}\n\nfragment ConditionScenarioCreate_question on Question {\n  id\n  conditionals {\n    question_option {\n      label\n      question {\n        id\n      }\n      id\n    }\n    id\n  }\n}\n\nfragment ConditionalForm_question on Question {\n  id\n  conditionals {\n    question_option {\n      question {\n        id\n        label\n      }\n      id\n    }\n    id\n  }\n}\n\nfragment QuestionCreate_viewer on Viewer {\n  ...QuestionForm_viewer\n  id\n}\n\nfragment QuestionTable_viewer on Viewer {\n  ...QuestionManageConditionalButton_viewer\n  ...QuestionManageOptionsButton_viewer\n  ...QuestionUpdate_viewer\n  id\n}\n\nfragment QuestionManageConditionalButton_viewer on Viewer {\n  ...QuestionManageConditionScenario_viewer\n}\n\nfragment QuestionManageOptionsButton_viewer on Viewer {\n  ...QuestionOptionCopy_viewer\n}\n\nfragment QuestionUpdate_viewer on Viewer {\n  ...QuestionForm_viewer\n}\n\nfragment QuestionForm_viewer on Viewer {\n  ...QuestionKindSelect_viewer\n  ...QuestionUISchemaEditor_viewer\n}\n\nfragment QuestionKindSelect_viewer on Viewer {\n  questionKinds\n}\n\nfragment QuestionUISchemaEditor_viewer on Viewer {\n  ...QuestionMultichoiceUISchemaEditor_viewer\n  ...QuestionMultiselectUISchemaEditor_viewer\n  ...QuestionIntegerUISchemaEditor_viewer\n}\n\nfragment QuestionMultichoiceUISchemaEditor_viewer on Viewer {\n  questionMultichoiceUIWidgetTypes\n}\n\nfragment QuestionMultiselectUISchemaEditor_viewer on Viewer {\n  questionMultiselectUIWidgetTypes\n}\n\nfragment QuestionIntegerUISchemaEditor_viewer on Viewer {\n  questionIntegerUIWidgetTypes\n}\n\nfragment QuestionOptionCopy_viewer on Viewer {\n  questions {\n    ...QuestionSelect_questions\n    id\n    kind\n    question_options {\n      ...QuestionOptionUpdate_question_option\n      ...QuestionOptionDelete_question_option\n      ...SequenceReorderButtons_list\n      ...SequenceReorderButtons_single\n      id\n      label\n      sequence\n      value\n    }\n  }\n}\n\nfragment QuestionSelect_questions on Question {\n  id\n  label\n}\n\nfragment QuestionOptionUpdate_question_option on QuestionOption {\n  id\n  label\n  sequence\n  value\n}\n\nfragment QuestionOptionDelete_question_option on QuestionOption {\n  id\n  question {\n    id\n    question_options {\n      id\n      label\n      value\n    }\n  }\n}\n\nfragment QuestionManageConditionScenario_viewer on Viewer {\n  id\n}\n","variables":{"question_set_id":"UXVlc3Rpb25TZXQtYzg1NGQ1YmItMTBhYy00NDY0LWIyZWQtZDE1ODMwYzExMzhl"}}' --compressed --insecure &
-}
+if [[ ! $requests = <-> || $requests < 1 ]]; then
+  echo "ERROR: First parameter must be the number of requests and greater than 1"
+  exit 1
+fi
 
-while true
+if [[ ! "$( command -v $executable )" ]]; then
+  echo "ERROR: Second parameter ($executable) must be an executable command"
+  exit 1
+fi
+
+# Add silencing to curl
+if [[ $executable = 'curl' && $arguments ]]; then
+  additional_curl_args='-s -o /dev/null -w "%{time_total} seconds total | %{http_code} \n"'
+  executable_command_with_arguments="$executable $additional_curl_args $arguments"
+fi
+
+
+echo "Beginning $requests calls to: \n$executable_command_with_arguments\n\n"
+
+for i in `seq 1 $requests`
 do
-  echo $(($(date +%s) - START)) | awk '{print int($1/60)":"int($1%60)}'
-  sleep 1
-
-  for i in `seq 1 $max`
-  do
-    get $i &
-  done
-  if [ %i -lte $count ]; then
+  eval $executable_command_with_arguments
+  if [[ $requests < %i ]]; then
     break
   fi
 done

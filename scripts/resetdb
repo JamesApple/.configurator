@@ -1,4 +1,8 @@
 #!/usr/local/bin/zsh
+# For platform Rails PG dev. 
+# Force stops the database to prevent crashed apps from preventing restart. 
+# Then creates and imports ~/Desktop/platform-dump into the correct db.
+# Then resets open tok id and sets all passwords to Test12345 and completes migrations
 
 brew services stop postgresql@9.6 \
   && brew services start postgresql@9.6 \
@@ -7,4 +11,5 @@ brew services stop postgresql@9.6 \
   && psql platform_development < ~/Desktop/platform-dump \
   && echo 'User.first.update(password: "Test12345"); User.update_all(encrypted_password: User.first.encrypted_password, opentok_session_id: nil);' \
   |  rails c \
-  && rails db:migrate
+  && rails db:migrate \
+  && git checkout docs/images

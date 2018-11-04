@@ -4,5 +4,6 @@ cd ~/configurator && ruby ./.source/config_composer.rb
 
 rm -rf ~/bin > /dev/null \
   ; mkdir ~/bin \
-  && cp ~/configurator/scripts/**/* ~/bin \
+  && ln -s ~/configurator/scripts/**/* ~/bin \
   && chmod +x ~/bin/**/*
+
