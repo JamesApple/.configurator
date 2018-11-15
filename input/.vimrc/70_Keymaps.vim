@@ -1,4 +1,9 @@
-nnoremap Y y$ | " Makes Y consistent with D
+" Multiple indents
+vnoremap > >gv
+vnoremap < <gv
+
+" Makes Y consistent with D
+nnoremap Y y$ 
 
 " Invert mark jumping keys
 nnoremap ' `
@@ -12,6 +17,9 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+
+" Split lines like J
+nmap <C-j> i<CR><ESC>
 
 " Keep search results in center of screen
 nmap n nzz
@@ -27,14 +35,8 @@ inoremap <C-w>j <ESC><C-w>j
 inoremap <C-w>l <ESC><C-w>l
 inoremap <C-w>h <ESC><C-w>h
 
-nnoremap M 15j
-nnoremap L 15k
-
-" nnoremap <C-h> <C-w><Left>
-" nnoremap <C-l> <C-w><Right>
-" nnoremap <C-k> <C-w><Up>
-" nnoremap <C-j> <C-w><Down>
 nnoremap <silent> <C-w>t :tabnew<CR>
+
 
 " Disable Arrow Keys
 noremap <Left> <NOP>
@@ -65,6 +67,8 @@ nmap <silent> <leader>vC
       \  /configurator<CR>
       \  :so $MYVIMRC<CR>
       \  :PlugInstall<CR>
+" Execute visual selection in vim
+vmap <leader>vs y:@"<CR>
 
 " Get the current highlight group. Useful for then remapping the color
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>

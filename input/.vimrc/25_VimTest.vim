@@ -7,7 +7,6 @@ nnoremap <leader>tF :TestFile<CR>
 nnoremap <leader>tn :TestNearest<CR>
 nnoremap <leader>tp :TestLast<CR>
 nnoremap <leader>to :TestVisit<CR>
-nnoremap <leader>c  :Console<CR>
 
 
 " Allow r to refresh quickfix window

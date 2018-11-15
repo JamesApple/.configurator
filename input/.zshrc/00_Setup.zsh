@@ -1,8 +1,4 @@
 source ~/.zplug/init.zsh
-# source /usr/local/var/homebrew/linked/zplug/init.zsh
-
-# export TERM="screen-256color"
-export TERM="xterm-256color-italic"
 
 # Add `~/bin` to the `$PATH` to enable custom scripts
 export PATH="$HOME/bin:$PATH";

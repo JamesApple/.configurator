@@ -26,6 +26,7 @@ nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
 
+" TODO: Add to autocmd pls
 xnoremap dp :diffput<CR>
 xnoremap do :diffget<cr>
 
@@ -36,12 +37,6 @@ xnoremap do :diffget<cr>
 
 
 augroup  fugitive_buffers
-  " Map .. to go up in trees and blobs
-  autocmd User fugitive
-        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-        \   nnoremap <buffer> .. :edit %:h<CR> |
-        \ endif
-
   " Delete fugitive buffers
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END

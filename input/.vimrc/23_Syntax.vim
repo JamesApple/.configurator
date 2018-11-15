@@ -8,6 +8,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'vue'] }            " SCSS
 Plug 'othree/html5.vim', { 'for': ['html', 'jsx', 'vue'] }              " HTML5
 
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }                             " Rails
+nnoremap <leader>c  :Console<CR>
 Plug 'tpope/vim-haml', { 'for': ['haml'] }                              " HAML
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] }                           " Ruby
 

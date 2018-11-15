@@ -1,4 +1,3 @@
-" set shell=/bin/bash " Gitgutter occasionally breaks with zsh
 let g:mapleader = "\<Space>"
 
 

@@ -1,10 +1,3 @@
-" https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
-"https://github.com/ramitos/jsctags
-" https://medium.com/@jrwillette88/tern-why-it-breaks-and-how-to-fix-it-8d1677df05f9
-" Debug Commands
-" let g:deoplete#enable_profile = 1
-" call deoplete#custom#source('tern', 'debug_enabled', 1)<CR>
-
 " Mandatory plumbing for typescript build
 function! BuildTS(info)
   if a:info.status == 'installed' || a:info.force || a:info.status == 'updated'
@@ -15,28 +8,21 @@ function! BuildTS(info)
 endfunction
 
 " Completion Tooling
-Plug 'Shougo/deoplete.nvim', " Completion Manager
-      \{ 'do': ':UpdateRemotePlugins' } 
-Plug 'Shougo/echodoc.vim'
-Plug 'ervandew/supertab'
-" Completion Sources
-Plug 'Shougo/neco-syntax'           " Completion from syntax file
-Plug 'Shougo/neco-vim',             " Vim Source
-      \{ 'for': ['vim'] }
-" Plug 'carlitux/deoplete-ternjs',    " Vanilla Javascript source. Keep this here for
-" different computer / dev setups
-"       \{ 'for': ['javascript', 'javascript.jsx'], 
-"       \'do': 'yarn global add tern' }
-" Plug 'ternjs/tern_for_vim'
-Plug 'mhartington/nvim-typescript', " Incredible typescript source
-      \{ 'for': ['typescript']
-      \'do': function('BuildTS') }
-Plug 'wokalski/autocomplete-flow', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }                    " Completion Manager
+Plug 'Shougo/echodoc.vim'                                                               " Echo method signatures to command window
+Plug 'ervandew/supertab'                                                                " Make tab completion easier
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" Completion Sources
+Plug 'Shougo/neco-syntax'                                                               " Completion from syntax file
+Plug 'Shougo/neco-vim',             { 'for': ['vim'] }                                  " Vim Source
+Plug 'mhartington/nvim-typescript', { 'for': ['typescript'], 'do': function('BuildTS') } " Incredible typescript source
+Plug 'wokalski/autocomplete-flow',  { 'for': ['javascript', 'javascript.jsx'] }         " Easy flow integration
+
 set completeopt+=menuone,noinsert,noselect " Completion styles
-set completeopt-=preview " Don't pop up terrible window
-set cmdheight=2 " Needed for echodoc to display completion docs
+set completeopt-=preview                   " Don't pop up terrible window
+set cmdheight=2                            " Needed for echodoc to display completion docs
+
+let g:SuperTabDefaultCompletionType = "<c-n>" " Default to complete down the list
 
 let g:echodoc_enable_at_startup=1
 

@@ -15,6 +15,7 @@ augroup gitGutterFiletypeDisabler
   autocmd BufEnter */ :GitGutterDisable
 augroup END
 
+
 let g:gitgutter_realtime = 0                        " Realtime breaks with Zsh
 let g:gitgutter_map_keys = 0                        " No keymaps
 let g:gitgutter_max_signs = 200 
