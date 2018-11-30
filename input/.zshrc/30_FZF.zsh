@@ -13,6 +13,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob  "!.git/"'
 
 
 # (s)earch (c)hrome
+# Bookmark: String => Open bookmark in chrome
+# sc google
 sc() {
   local cols sep
   cols=$(( COLUMNS / 3 ))
@@ -26,6 +28,8 @@ sc() {
 }
 
 # (J)ump
+# DirectoryFragment: String => CD to most likely dir
+# EG: j mydir
 j() {
   local dir
   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
@@ -36,24 +40,23 @@ j() {
 st() {
   local file
   file="$(rg --column --follow --hidden --line-number --hidden --no-heading --color=always --smart-case $@  | fzf --ansi -0 -1  | awk -F: '{print $1 " +" $2}')"
-  # cmd="rg --column --follow --hidden --line-number --hidden --no-heading --color=always --smart-case"
-  # file=
   if [[ -n $file ]]
   then
     vim $=file
-  else 
+  else
     echo 'De nada'
   fi
 }
 
 
+# (s)earch (f)iles
 sf() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-
+# (s)earch (d)irectory
 sd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
@@ -61,8 +64,8 @@ sd() {
     cd "$dir"
 }
 
-
-tm() {
+# (s)earch (tm)ux
+stm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
   if [ $1 ]; then
     tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return

@@ -82,14 +82,13 @@ eval "$(pyenv init -)" \
   && pyenv shell 3.5.0 && pip install --upgrade pip && pip install --user neovim \
   && pyenv shell 2.7.10 && pip install --upgrade pip && pip install --user neovim
 
-
 # NVM, Node, Yarn and neovimJS
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
-  && nvm install --lts\
-  && nvm use --lts \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  \
   && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  \
+  && nvm install --lts\
+  && nvm use --lts \
   && brew install yarn --without-node \
   && yarn global add neovim jscodeshift
 
@@ -98,8 +97,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 brew services start postgresql \
   && createuser -s -r postgres \
   && createdb `whoami`
-
-
 
 # Configure OSX
 osascript -e 'tell application "System Preferences" to quit'

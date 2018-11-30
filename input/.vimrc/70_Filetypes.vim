@@ -4,6 +4,7 @@ augroup FTDetects
     au BufRead,BufNewFile Procfile setfiletype yaml
     au BufRead,BufNewFile .env.override setfiletype sh
     au BufRead,BufNewFile .env.example setfiletype sh
+    au BufRead,BufNewFile .envrc setfiletype sh
 augroup END
 
 augroup FTSettings

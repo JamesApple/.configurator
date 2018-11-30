@@ -6,3 +6,4 @@ fi
 zplug load # --verbose
 
 set monitor
+
