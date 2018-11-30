@@ -4,8 +4,9 @@ let g:cronos_path = '~/cronos/'
 let g:cronos_diary_path = g:cronos_path.'diary/'
 let g:cronos_diary_entry_filename = g:cronos_diary_path.'entries.md'
 
-function! EditDiaryEntryForHumanTime(date_string)
-  let formattedDateCommand = 'gdate --date='.a:date_string.' +"%y-%m-%d-%A"'
+function! EditDiaryEntryForHumanTime(base_date_string)
+  let date = input('Entry for: ', a:base_date_string)
+  let formattedDateCommand = 'gdate --date='.date.' +"%y-%m-%d-%A"'
   let dateOrError = systemlist(formattedDateCommand)[0]
 
   if v:shell_error
@@ -16,8 +17,9 @@ function! EditDiaryEntryForHumanTime(date_string)
     let writeIndexLinkToEntriesFileCommand = 'if ! grep "'.dateOrError.'" '.g:cronos_diary_entry_filename.'; then echo "'.dateAsMarkdownLink.'" >> '.g:cronos_diary_entry_filename.'; fi'
     call system(writeIndexLinkToEntriesFileCommand)
     let diaryEntryPath = g:cronos_diary_path.filename
-    execute 'tabedit '.g:cronos_diary_entry_filename
-    execute 'vsplit '.diaryEntryPath
+    execute 'edit '.diaryEntryPath
+    execute 'nnoremap <buffer> - :edit '.g:cronos_diary_entry_filename.'<CR>'
+    " nnoremap <buffer> - :edit expand('%:p:h').'/entries.md'<CR>
   end
 endfunction
 
@@ -32,7 +34,6 @@ endfunction
 
 nnoremap <silent> <leader>dd :call OpenCronos()<CR>
 nnoremap <silent> <leader>sd :Files ~/cronos/<CR>
-nnoremap <leader>dn :call EditDiaryEntryForHumanTime('')<Left><Left>
 nnoremap <leader>dt :call EditDiaryEntryForHumanTime('today')<CR>
 nnoremap <leader>dy :call EditDiaryEntryForHumanTime('yesterday')<CR>
 
