@@ -1,0 +1,32 @@
+snippet .map "Map Function {}" i
+.map { |${1:item}| ${2:$1} }
+endsnippet
+
+snippet .each "Each Function {}" i
+.each { |${1:item}| ${2:$1} }
+endsnippet
+
+snippet .reverse_each "Reverse Each Function {}" i
+.reverse_each { |${1:item}| ${2:$1} }
+endsnippet
+
+snippet .any? "Any? Function {}" i
+.any? { |${1:item}| $1${2: > condition} }
+endsnippet
+
+snippet .tap "Tap Function {}" i
+.tap { |${1:previous_item}| ${2:$1} }
+endsnippet
+
+snippet .sort "Sort Function {}" i
+.sort { |${1:first}, ${2:second}| $1${3: <=> $2} }
+endsnippet
+
+snippet .select "Select Function {}" i
+.select { |${1:item}| ${2:$1 } }
+endsnippet
+
+snippet .count "Count Function {}" i
+.count { |${1:item}| ${2:$1}${3: == ??} }
+endsnippet
+

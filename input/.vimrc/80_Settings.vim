@@ -20,7 +20,7 @@ set directory=~/.vimtmp           " Create global swp file in .vimtmp
 set confirm                       " Failed commands will ask permission occasionally
 
 set hidden                        " Hide buffers instead of deleting
-set colorcolumn=110               " Highlight column
+set colorcolumn=80                " Highlight column
 set winheight=10                  " Minimum height for focused window
 set warn                          " Issue a warning when running a shell command with unsaved changes
 

@@ -9,6 +9,7 @@ Plug 'tpope/vim-unimpaired'                                         " Many helpe
 Plug 'tpope/vim-repeat'                                             " Many helper functions
 Plug 'tpope/vim-obsession',     { 'on': 'Obsession' }               " Many helper functions
 Plug 'wellle/targets.vim'
+Plug 'tommcdo/vim-exchange'
 
 Plug 'google/vim-searchindex'                                       " Adds search numbers
 Plug 'editorconfig/editorconfig-vim'                                " Set indentation and etc based on project
