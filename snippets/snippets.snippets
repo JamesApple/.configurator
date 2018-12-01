@@ -160,6 +160,23 @@
 # end{$1}$0
 # endsnippet
 
+# PYTHON EXAMPLE:
+# # Global block gives access to the contained scope
+# global !p
+# def fraction(a, b):
+#     try:
+#         return "%.1f" % (float(a)/float(b))
+#     except (ValueError, ZeroDivisionError):
+#         return "ERR"
+# endglobal
+
+# snippet 75wrds "Log a 750words.com session" b
+# 750words.com: ${1:750} words in ${2:20} minutes - `!p
+# snip.rv = fraction(t[1], t[2])
+# ` wpm.
+# endsnippet
+
+
 # {{{ Snippet Snippets
 snippet snip "Ultisnips snippet definition" b
 `!p snip.rv = "snippet"` ${1:Tab_trigger} "${2:Description}" ${3:b}
@@ -190,48 +207,3 @@ endsnippet
 snippet echo "Echo a persistent message" b
 \`!v Echo('${1:Persistent Message}')\`
 endsnippet
-
-
-
-snippet up "Unique Pointer" i
-std::unique_ptr<${1:`!p
-snip.rv = snip.v.text.strip("*") or "klass" `}>
-endsnippet
-
-snippet inline "Inline completion example" i
-.classList.remove('$1')
-endsnippet
-
-snippet beginning "Beginning of line example" b
-${1:FIELDNAME} = models.CharField(${2:...})
-endsnippet
-
-snippet viml "Vim date interp example"
-`!v strftime("%Y-%m-%d")`
-endsnippet
-
-snippet mirror "Mirroring example"
----
-title: ${1:Meet UltiSnips}
-date: ${2:`date +%Y-%m-%d`}
-tags: $3
----
-# $1
-$0
-endsnippet
-
-# Global block gives access to the contained scope
-global !p
-def fraction(a, b):
-    try:
-        return "%.1f" % (float(a)/float(b))
-    except (ValueError, ZeroDivisionError):
-        return "ERR"
-endglobal
-
-snippet 75wrds "Log a 750words.com session" b
-750words.com: ${1:750} words in ${2:20} minutes - `!p
-snip.rv = fraction(t[1], t[2])
-` wpm.
-endsnippet
-

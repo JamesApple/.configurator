@@ -1,32 +1,41 @@
-snippet .map "Map Function {}" i
-.map { |${1:item}| ${2:$1} }
+snippet .map "ENUMERABLE: .map()" i
+.map { |${1:item}| ${2:$1}$0 }
 endsnippet
 
-snippet .each "Each Function {}" i
-.each { |${1:item}| ${2:$1} }
+snippet .delete "ENUMERABLE: .delete()" i
+.delete { |${1:item}| ${2:$1}$0 }
 endsnippet
 
-snippet .reverse_each "Reverse Each Function {}" i
-.reverse_each { |${1:item}| ${2:$1} }
+snippet .each "ENUMERABLE: .each()" i
+.each { |${1:item}| ${2:$1}$0 }
 endsnippet
 
-snippet .any? "Any? Function {}" i
-.any? { |${1:item}| $1${2: > condition} }
+snippet .cycle "ENUMERABLE: .cycle([Number])" i
+.cycle { |${1:item}| ${2:$1}$0 }
 endsnippet
 
-snippet .tap "Tap Function {}" i
-.tap { |${1:previous_item}| ${2:$1} }
+snippet .reverse_each "ENUMERABLE: .reverse_each()" i
+.reverse_each { |${1:item}| ${2:$1}$0 }
 endsnippet
 
-snippet .sort "Sort Function {}" i
-.sort { |${1:first}, ${2:second}| $1${3: <=> $2} }
+snippet .any? "ENUMERABLE: .any()" i
+.any? { |${1:item}| $1${2: > condition}$0 }
 endsnippet
 
-snippet .select "Select Function {}" i
-.select { |${1:item}| ${2:$1 } }
+snippet .tap "ENUMERABLE: .tap()" i
+.tap { |${1:previous_item}| ${2:$1}$0 }
 endsnippet
 
-snippet .count "Count Function {}" i
-.count { |${1:item}| ${2:$1}${3: == ??} }
+snippet .sort "ENUMERABLE: .sort()" i
+.sort { |${1:first}, ${2:second}| $1${3: <=> $2}$0 }
 endsnippet
+
+snippet .select "ENUMERABLE: .select()" i
+.select { |${1:item}| ${2:$1 }$0 }
+endsnippet
+
+snippet .count "ENUMERABLE: .count()" i
+.count { |${1:item}| ${2:$1}${3: == ??}$0 }
+endsnippet
+
 

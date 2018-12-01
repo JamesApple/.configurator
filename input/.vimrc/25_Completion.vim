@@ -45,6 +45,25 @@ let g:LanguageClient_serverCommands = {
 " let g:LanguageClient_serverCommands = {
 "       \ 'ruby': ['solargraph', 'stdio']
 "       \}
+" let g:custom_deoplete_options = {
+"       \ 'sources': { 'ultisnips': { 'rank': 1000, 'matchers': ['matcher_full_fuzzy'] } }
+"       \}
+
+" function! ReportPlease(s, c)
+"   echom a:c
+" endfunction
+
+augroup DeopleteStuff
+  autocmd!
+  autocmd! BufEnter *
+        \ call deoplete#enable_logging('DEBUG', 'deoplete.log')
+        " \ | call deoplete#custom#option('profile', v:true)
+
+        " \ | call deoplete#custom#source('ultisnips', 'keyword_patterns', { 'ruby': ['\.?[a-zA-Z_]\w*' ] } )
+        " \ | call deoplete#custom#source('ultisnips', 'input_patterns', { 'ruby': ['\.', '::'] } )
+        " \ | call deoplete#custom#source('ultisnips', 'mark', 'Boop' )
+        " " \ | call deoplete#custom#source('ultisnips', 'matchers', ['matcher_head', 'matcher_full_fuzzy', 'matcher_cpsm'])
+augroup END
 
 set completeopt+=menuone,noinsert,noselect " Completion styles
 set completeopt-=preview                   " Don't pop up terrible window
@@ -53,13 +72,11 @@ set cmdheight=2                            " Needed for echodoc to display compl
 let g:SuperTabDefaultCompletionType = "<c-n>" " Default to complete down the list
 
 let g:echodoc_enable_at_startup=1
-
 let g:deoplete#enable_at_startup = 1
-let deoplete#tag#cache_limit_size = 5000000 " Increase tag cache size for mega projects
-let g:deoplete#enable_camel_case = 1
 
 let g:nvim_typescript#max_completion_detail = 15
 let g:nvim_typescript#type_info_on_hold = 1
+
 let g:racer_cmd = "/Users/jamesapple/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
