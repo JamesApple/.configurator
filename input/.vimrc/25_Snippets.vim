@@ -3,8 +3,8 @@ Plug 'JamesApple/ultisnips' " Yeah it's snippets
 " Add python helpers
  py import sys; sys.path.append("~/configurator/snippets/python_helpers")
 
-" Long lived echo message
-" Not menat to keep the message there long. Just enough to prevent immediate
+" LONG LIVED ECHO MESSAGE:
+" Not meant to keep the message there long. Just enough to prevent immediate
 " redraw in scripts
 function! Echo(msg)
   echo a:msg
@@ -14,8 +14,6 @@ endfunction
 let g:PersistentEcho = ''
 if &ut>200|let &ut=200|endif
 au CursorHold * if PersistentEcho!=''|echo PersistentEcho|let PersistentEcho=''|endif
-
-nnoremap <leader>se :UltiSnipsEdit<CR>| " Edit snippets for current FT
 
 let g:UltiSnipsSnippetsDir = '~/configurator/snippets'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/configurator/snippets']
