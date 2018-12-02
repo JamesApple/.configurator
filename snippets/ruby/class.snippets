@@ -1,0 +1,52 @@
+global !p
+def classname_for_file():
+	try:
+		return ''.join(x.capitalize() or '_' for x in snip.basename.split('_'))
+	except:
+		return "ERR"
+
+def classname_for_spec():
+	try:
+		return classname_for_file().replace('Spec', '')
+	except:
+		return "ERR"
+
+def args_from_arg_string(arg_string):
+	try:
+		args = list(map(lambda s: s.strip(), arg_string.replace(':', '').split(',')))
+		if args[0]:
+			return args
+		else:
+			return []
+	except:
+		return []
+
+def instance_assignments_from_arg_string(arg_string):
+	try:
+		return list(map(lambda a: '@' + a + ' = ' + a, args_from_arg_string(arg_string)))
+	except:
+		return "ERR"
+
+def symbols_from_arg_string(arg_string):
+	try:
+		return list(map(lambda a: ':' + a , args_from_arg_string(arg_string)))
+	except:
+		return "ERR"
+endglobal
+
+snippet class "SCAFFOLD: Class" b
+class ${1:`!p snip.rv = classname_for_file()`}${2: < ${3:InhertedClass}}
+	${0:${VISUAL}}
+end
+endsnippet
+
+snippet "^(?:def)? ?init(?:ialize)?(?:\((.*))?$" "SCAFFOLD: Initialize method with attr_reader" br
+${2:attr_${3:reader} `!p snip.rv = ', '.join(symbols_from_arg_string(t[1]))`}
+
+def initialize(${1:`!p snip.rv = match.group(1) if match.group(1) is not None else "args"`})`!p 
+snip >> 2
+for assignment in instance_assignments_from_arg_string(t[1]): snip += assignment`$4
+end$0
+endsnippet
+
+

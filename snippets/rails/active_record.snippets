@@ -1,0 +1,70 @@
+# snake_case to TitleCase
+# /([a-z])([a-z]+)_?/\u$1$2/g
+
+snippet validates_associated "AREC: validates associated" b
+validates_associated :${0:relation}${1:, on: ${2::create}}${3:, message: '${4:is invalid}'}${5:, if: :${6:field_updated?}}
+endsnippet
+
+snippet validates_presence_of "AREC: Validates Presence Of" b
+validates_presence_of :${1:has_one_relation}${2:, message: '${3:$1 must exist}'}${4:, strict: ${5: true}}
+endsnippet
+
+snippet belongs_to "AREC: Belongs to relation" b
+belongs_to :${1:relation_name}${2:, -> { ${3:where id: 2} }}${4:, class_name: '${5:${1/([a-z])([a-z]+)_?/\u$1$2/g}}'}${6:, foreign_key: :${7:$1_id}}${7:, primary_key: :${8:id}}${9:, validate: ${10: false}}${11:, inverse_of: :${12:`!p snip.rv = snip.basename`}}${13:, optional: ${14: false}}
+endsnippet
+
+snippet belongs_to "AREC: Belongs to relation" b
+belongs_to :${1:relation_name}${2:, -> { ${3:where id: 2} }}${4:, class_name: '${5:${1/([a-z])([a-z]+)_?/\u$1$2/g}}'}${6:, foreign_key: :${7:$1_id}}${7:, primary_key: :${8:id}}${9:, validate: ${10: false}}${11:, inverse_of: :${12:`!p snip.rv = snip.basename`}}${13:, optional: ${14: false}}
+endsnippet
+
+snippet belongs_to_polymorphic "AREC: Belongs to relation" b
+# has_many :$12s as: :$1
+belongs_to :${1:relation_name}, polymorphic: true${4:, class_name: '${5:${1/([a-z])([a-z]+)_?/\u$1$2/g}}'}${6:, foreign_key: :${7:$1_id}}${7:, primary_key: :${8:id}}${9:, validate: ${10: false}}${11:, inverse_of: :${12:`!p snip.rv = snip.basename`}}${13:, optional: ${14: false}}
+endsnippet
+
+snippet has_many "AREC: Has many relation" b
+has_many :${1:relations_name_plural}
+endsnippet
+
+snippet has_many_through "AREC: Has many relation" b
+has_many :${1:relations_name_plural}, through: :${2:relation}, inverse_of: :${3:`!p snip.rv = snip.basename`}${4:, source: :${5:$1}}${6:, inverse_of: :${7:$1}}${8:, dependent: ${9: :destroy}}
+endsnippet
+
+
+
+# snippet validator_class "AREC: Scaffold validator class" b
+# endsnippet
+# validates :email, presence: true, email: true
+# class EmailValidator < ActiveModel::EachValidator
+#   def validate_each(record, attribute, value)
+#     record.errors.add attribute, (options[:message] || "is not an email") unless
+#       value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+#   end
+# end
+
+# snippet ve
+# 	validates :${1:attribute}, exclusion: { in: ${0:%w( mov avi )} }
+# snippet vf
+# 	validates :${1:attribute}, format: { with: /${0:regex}/ }
+# snippet vi
+# 	validates :${1:attribute}, inclusion: { in: %w(${0: mov avi }) }
+# snippet vl
+# 	validates :${1:attribute}, length: { in: ${2:3}..${0:20} }
+# snippet vn
+# 	validates :${0:attribute}, numericality: true
+# snippet va validates .., acceptance: true
+# 	validates :${0:terms}, acceptance: true
+
+global !p
+def classname_for_file():
+    try:
+        return ''.join(x.capitalize() or '_' for x in snip.basename.split('_'))
+    except:
+        return "ERR"
+
+def classname_for_spec():
+    try:
+        return classname_for_file().replace('Spec', '')
+    except:
+        return "ERR"
+endglobal

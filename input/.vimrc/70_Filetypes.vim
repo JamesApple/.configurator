@@ -5,6 +5,15 @@ augroup FTDetects
     au BufRead,BufNewFile .env.override setfiletype sh
     au BufRead,BufNewFile .env.example setfiletype sh
     au BufRead,BufNewFile .envrc setfiletype sh
+    au BufRead,BufNewFile *.log setfiletype log
+    " These are for my own connfiguration management system
+    au BufRead,BufNewFile *input/.gitconfig/* setfiletype gitconfig
+    au BufRead,BufNewFile *input/.gitignore/* setfiletype gitignore
+    au BufRead,BufNewFile *input/.zshrc/* setfiletype zsh
+    au BufRead,BufNewFile *input/.zshenv/* setfiletype zsh
+    au BufRead,BufNewFile *input/.zlogin/* setfiletype zsh
+    au BufRead,BufNewFile *input/.vimrc/* setfiletype vim
+    au BufRead,BufNewFile *input/.tmux.conf/* setfiletype conf
 augroup END
 
 augroup FTSettings
