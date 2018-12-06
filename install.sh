@@ -80,7 +80,8 @@ eval "$(pyenv init -)" \
   && pyenv install 3.5.0 -s \
   && pyenv global 3.5.0 \
   && pyenv shell 3.5.0 && pip install --upgrade pip && pip install --user neovim \
-  && pyenv shell 2.7.10 && pip install --upgrade pip && pip install --user neovim
+  && pyenv shell 2.7.10 && pip install --upgrade pip && pip install --user neovim \
+  && pyenv global 3.5.0 2.7.0
 
 # NVM, Node, Yarn and neovimJS
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
@@ -93,7 +94,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
   && yarn global add neovim jscodeshift
 
 
-# Config Postgres to allow default connections via psql
+# Configure Postgres to allow default connections via psql
 brew services start postgresql \
   && createuser -s -r postgres \
   && createdb `whoami`

@@ -20,28 +20,26 @@ class ConfigComposer
 
   # Each directory within the /input directory is considered a 'file'
   # If any of these files contain a directory, they will not be stitched.
-  def create_config_files path
+  def create_config_files(path)
     directories = directories_in path
     directories
       .map { |d| ConfigFile.new d }
-      .map { |cf| cf.setup }
+      .map(&:setup)
       .compact
   end
 
-  def directories_in path
+  def directories_in(path)
     directories = `cd #{path} && ls -AF`
-      .split("\n")
-      .keep_if { |listing| listing.include? '/' }
-      .map { |directory| directory.chop }
-      .map { |d| File.join path, d }
+                  .split("\n")
+                  .keep_if { |listing| listing.include? '/' }
+                  .map(&:chop)
+                  .map { |d| File.join path, d }
     p directories
     return [] if directories.empty?
     directories + directories
-      .map { |d| directories_in d }
-      .flatten
+                  .map { |d| directories_in d }
+                  .flatten
   end
-
-
 end
 
 ConfigComposer.new
