@@ -42,8 +42,8 @@ function optionally-render-segment-by-count () {
 
 
 function update-git-command () {
-  local branch="$( git rev-parse --abbrev-ref HEAD 2&> /dev/null )"
   # Check if we're not in a git repo
+  branch="$( git rev-parse --abbrev-ref HEAD 2&> /dev/null )"
   if [ $? -eq 0 ]; then
     local git_branch_indicator="$(yellow "$branch") "
     # Run full status command
@@ -84,7 +84,6 @@ function set-prompt () {
   local newline=$'%1(l.\n.)'
   local failure_indicator='%(?..'"$(red '> ')"')'
   PS1="%B$failure_indicator$VI_MODE_TITLE $CURRENT_PATH$( red "$root_indicator" )$( echo ':' )$GIT_SEGMENT%b $newline"
-  echo 'lol'
   zle reset-prompt
 }
 
