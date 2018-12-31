@@ -11,7 +11,7 @@ alias onport='lsof -wni tcp:3000'
 alias c='clear'
 
 # Other git aliases are in gitconfig
-alias g='git'
+alias g='hub'
 
 # Bundler Aliases
 alias b='bundle'

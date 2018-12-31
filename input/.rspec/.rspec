@@ -1,0 +1,2 @@
+--format documentation
+--require ~/.rspec_support/spec_helper.rb

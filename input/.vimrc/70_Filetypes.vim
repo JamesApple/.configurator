@@ -17,7 +17,7 @@ augroup FTDetects
 augroup END
 
 augroup FTSettings
-    au FileType snippets setlocal foldmethod=marker "setlocal shiftwidth=2 tabstop=2
+    au FileType snippets setlocal foldmethod=marker tabstop=2 shiftwidth=2
     au FileType gitcommit setlocal spell
     au FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
     au BufEnter *.snippets PyParensEnable

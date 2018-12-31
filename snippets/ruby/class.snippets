@@ -35,15 +35,21 @@ def symbols_from_arg_string(arg_string):
 endglobal
 
 snippet class "SCAFFOLD: Class" b
-class ${1:`!p snip.rv = classname_for_file()`}${2: < ${3:InhertedClass}}
+class ${1:`!p snip.rv = classname_for_file()`}${2: < ${3:ActiveRecord::Base}}
 	${0:${VISUAL}}
 end
 endsnippet
 
-snippet "^(?:def)? ?init(?:ialize)?(?:\((.*))?$" "SCAFFOLD: Initialize method with attr_reader" br
+snippet module "SCAFFOLD: Module" b
+module ${1:`!p snip.rv = classname_for_file()`}
+	${0:${VISUAL}}
+end
+endsnippet
+
+snippet definit "SCAFFOLD: Initialize method with attr_reader" b
 ${2:attr_${3:reader} `!p snip.rv = ', '.join(symbols_from_arg_string(t[1]))`}
 
-def initialize(${1:`!p snip.rv = match.group(1) if match.group(1) is not None else "args"`})`!p 
+def initialize(${1:vars})`!p 
 snip >> 2
 for assignment in instance_assignments_from_arg_string(t[1]): snip += assignment`$4
 end$0

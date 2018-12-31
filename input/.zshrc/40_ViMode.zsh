@@ -84,6 +84,7 @@ function set-prompt () {
   local newline=$'%1(l.\n.)'
   local failure_indicator='%(?..'"$(red '> ')"')'
   PS1="%B$failure_indicator$VI_MODE_TITLE $CURRENT_PATH$( red "$root_indicator" )$( echo ':' )$GIT_SEGMENT%b $newline"
+  echo 'lol'
   zle reset-prompt
 }
 

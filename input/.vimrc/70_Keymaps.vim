@@ -13,10 +13,10 @@ nnoremap ` '
 nnoremap <Backspace> -
 
 " Move around using C-h|j|k|l in insert mode
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+" inoremap <C-h> <Left>
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-l> <Right>
 
 " Split lines like J
 nmap <C-j> i<CR><ESC>

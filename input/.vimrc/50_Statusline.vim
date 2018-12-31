@@ -37,6 +37,7 @@ endfunction
 set statusline+=%#PmenuSel#
 set statusline+=%{GitBranch()}
 set statusline+=%#LineNr#
+set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
 set statusline+=\ %f
 set statusline+=%m\
 set statusline+=%=

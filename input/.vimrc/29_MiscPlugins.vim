@@ -5,6 +5,9 @@ Plug 'tpope/vim-commentary'                                         " Comment wi
 Plug 'tpope/vim-endwise'                                            " Add end after ruby
 nmap o A<CR>
 
+Plug 'tpope/vim-capslock' " Pseudo caps for SQL
+imap <C-l> <C-O><Plug>CapsLockToggle
+
 Plug 'tpope/vim-unimpaired'                                         " Many helper functions
 Plug 'tpope/vim-repeat'                                             " Many helper functions
 Plug 'tpope/vim-obsession',     { 'on': 'Obsession' }               " Many helper functions

@@ -15,7 +15,7 @@ Plug 'ervandew/supertab'                                                        
 " Completion Sources
 Plug 'Shougo/neco-syntax'                                                               " Completion from syntax file
 Plug 'Shougo/neco-vim',             { 'for': ['vim'] }                                  " Vim Source
-Plug 'mhartington/nvim-typescript', { 'for': ['typescript'], 'do': function('BuildTS') } " Incredible typescript source
+Plug 'mhartington/nvim-typescript'
 Plug 'wokalski/autocomplete-flow',  { 'for': ['javascript', 'javascript.jsx'] }         " Easy flow integration
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'racer-rust/vim-racer', { 'for': ['rust'] }
