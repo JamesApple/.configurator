@@ -21,7 +21,6 @@ set confirm                       " Failed commands will ask permission occasion
 
 set hidden                        " Hide buffers instead of deleting
 set colorcolumn=80                " Highlight column
-set winheight=10                  " Minimum height for focused window
 set warn                          " Issue a warning when running a shell command with unsaved changes
 
 " Ex commands
@@ -79,7 +78,7 @@ set scrolloff=999    " Keep cursor in middle of screen
 set sidescrolloff=15 " Keep window with cursor at least this far from top/bottom
 set sidescroll=5     " Keep window with cursor at least this far from the sides
 set winwidth=40      " Minimum width for focused window
-
+set winheight=10     " Minimum height for focused window
 
 " Use system clipboard
 set clipboard=unnamed
