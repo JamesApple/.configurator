@@ -30,5 +30,9 @@
 
   # Show
   sts = "!f() { n=$(git stash list --max-count=1 --grep=$1 | cut -f1 -d":") ; if [[ -n "$n" ]] ; then git stash show "$n" ; else echo "Error: No stash matches $1" ; return 1 ; fi }; f"
+
   # Apply
   sta = "!f() { n=$(git stash list --max-count=1 --grep=$1 | cut -f1 -d":") ; if [[ -n "$n" ]] ; then git stash apply "$n" ; else echo "Error: No stash matches $1" ; return 1 ; fi }; f"
+
+  # Hub specific aliases
+  prs = pr list -f '[%sC%i%Creset] %sC%t%Creset:%NC %n%au:[%H] %ur %S %l %n%U %n%n'
