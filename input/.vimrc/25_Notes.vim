@@ -55,5 +55,5 @@ function! EditDiaryEntryForHumanTime(base_date_string)
 endfunction
 let g:diary_path = g:notes_path.'diary/'
 let g:diary_index_file = g:diary_path.'entries.md'
-nnoremap <leader>d :call EditDiaryEntryForHumanTime('today')<CR>
+nnoremap <leader>?d :call EditDiaryEntryForHumanTime('today')<CR>
 
