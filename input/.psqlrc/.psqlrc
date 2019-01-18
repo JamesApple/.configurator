@@ -1,0 +1,36 @@
+\set QUIET 1
+
+
+-- Nicer output
+\pset linestyle unicode
+
+-- Display a border around results
+\pset border 
+\pset border 2
+
+-- More obvious nulls
+\pset null '[NULL]'
+
+-- Prompt style
+\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
+\set PROMPT2 '>'
+
+-- Verbose errors
+\set VERBOSITY verbose
+
+-- Per database history and ignore duplicates
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+
+-- Always complete keywords in uppercase
+\set COMP_KEYWORD_CASE upper
+
+-- Automatically change to vertical display if results would wrap
+\x auto
+-- Display query time
+\timing
+
+\set ON_ERROR_ROLLBACK interactive
+
+
+\unset QUIET
