@@ -83,3 +83,6 @@ set winwidth=40      " Minimum width for focused window
 
 " Use system clipboard
 set clipboard=unnamed
+
+" Round indents
+set shiftround

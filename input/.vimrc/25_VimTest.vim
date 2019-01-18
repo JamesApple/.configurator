@@ -25,6 +25,7 @@ let test#strategy = {
       \}
 
 let test#javascript#jest#executable = 'yarn jest'
+let g:test#javascript#jest#options = '--reporters ~/jest-quickfix-reporter'
 
 let test#ruby#rspec#file_pattern = '_spec\.rb'
 let test#ruby#rspec#executable = 'bundle exec rspec'

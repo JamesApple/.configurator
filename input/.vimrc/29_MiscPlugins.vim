@@ -29,4 +29,4 @@ Plug 'tpope/vim-bundler',       { 'for': ['ruby'] }                 " Ruby gems 
 Plug 'tpope/vim-sleuth'                                             " Never touch indent settings
 
 Plug 'tpope/vim-apathy'                                             " Path shenanigans
-Plug 'tpope/vim-scriptease'                                         " Vim editing superpowers
+Plug 'tpope/vim-scriptease', { 'for': ['vim'] }  " Vim editing superpowers
