@@ -30,7 +30,8 @@ let g:ale_fixers = {
       \   'vue': ['prettier'],
       \   'json': ['prettier'],
       \   'scss': ['stylelint'],
-      \   'typescript': ['prettier', 'tslint']
+      \   'typescript': ['prettier', 'tslint'],
+      \   'go': ['gofmt', 'goimports']
       \}
 
 highlight clear ALEErrorSign   " otherwise uses error bg color (typically red)

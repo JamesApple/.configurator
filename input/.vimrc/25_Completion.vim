@@ -42,7 +42,8 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['yarn', 'flow', 'lsp', '--from', './node_modules/.bin'],
     \ 'javascript.jsx': ['yarn', 'flow', 'lsp', '--from', './node_modules/.bin'],
     \ 'Dockerfile': ['docker-langserver', '--stdio'],
-    \ 'rust': ['rustup', 'run', 'stable', 'rls']
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'go': ['go-langserver', '-gocodecompletion']
     \ }
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_rootMarkers = ['.flowconfig']
@@ -65,6 +66,7 @@ let g:nvim_typescript#type_info_on_hold = 1
 let g:racer_cmd = "/Users/jamesapple/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
+" Languages with good language servers
 au Filetype javascript,ruby nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 au Filetype javascript,ruby nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 

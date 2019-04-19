@@ -28,10 +28,10 @@ augroup END
 
 " Notes:
 let g:notes_path = '~/notes/'
-" <leader>? Opens notes
-execute 'nnoremap <silent> <leader>? :edit '.g:notes_path.'index.md<CR>G'
+" " <leader>? Opens notes
+" execute 'nnoremap <silent> <leader><leader> :edit '.g:notes_path.'index.md<CR>G'
 " <leader>s? Search notes
-execute 'nnoremap <silent> <leader>s? :Files '.g:notes_path.'<CR>'
+execute 'nnoremap <silent> <leader><leader> :Files '.g:notes_path.'<CR>'
 
 
 " Diary:

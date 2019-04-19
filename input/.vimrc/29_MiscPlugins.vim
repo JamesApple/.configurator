@@ -12,7 +12,8 @@ Plug 'tpope/vim-unimpaired'                                         " Many helpe
 Plug 'tpope/vim-repeat'                                             " Many helper functions
 Plug 'tpope/vim-obsession',     { 'on': 'Obsession' }               " Many helper functions
 Plug 'wellle/targets.vim'
-Plug 'tommcdo/vim-exchange'
+" Re evaluating exchange. It causes me too much pain
+" Plug 'tommcdo/vim-exchange'
 
 Plug 'google/vim-searchindex'                                       " Adds search numbers
 Plug 'editorconfig/editorconfig-vim'                                " Set indentation and etc based on project
@@ -30,3 +31,5 @@ Plug 'tpope/vim-sleuth'                                             " Never touc
 
 Plug 'tpope/vim-apathy'                                             " Path shenanigans
 Plug 'tpope/vim-scriptease', { 'for': ['vim'] }  " Vim editing superpowers
+
+Plug 'machakann/vim-highlightedyank'

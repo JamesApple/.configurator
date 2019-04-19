@@ -3,7 +3,6 @@ Plug 'tpope/vim-surround'            " Surround in parens etc with ys or cs
 
 let g:surround_no_mappings = 1
 
-
 " I never use the native s mappings. I use c and r
 nmap s  <Plug>Ysurround
 nmap S  <Plug>YSurround

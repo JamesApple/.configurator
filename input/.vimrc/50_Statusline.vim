@@ -34,6 +34,7 @@ function! StatusDiagnostic() abort
 endfunction
 
 
+set statusline+=%{winnr()} 
 set statusline+=%#PmenuSel#
 set statusline+=%{GitBranch()}
 set statusline+=%#LineNr#

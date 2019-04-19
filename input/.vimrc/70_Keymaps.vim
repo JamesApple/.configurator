@@ -9,6 +9,11 @@ nnoremap Y y$
 nnoremap ' `
 nnoremap ` '
 
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " Move to first character at SOL above
 nnoremap <Backspace> -
 

@@ -36,3 +36,6 @@
 
   # Hub specific aliases
   prs = pr list -f '[%sC%i%Creset] %sC%t%Creset:%NC %n%au:[%H] %ur %S %l %n%U %n%n'
+
+  tidy = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+
