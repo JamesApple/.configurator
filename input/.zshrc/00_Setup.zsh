@@ -1,5 +1,4 @@
 source ~/.zplug/init.zsh
-
 # Add `~/bin` to the `$PATH` to enable custom scripts
 export PATH="$HOME/bin:$PATH";
 

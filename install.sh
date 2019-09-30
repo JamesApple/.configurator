@@ -1,3 +1,6 @@
+# Use .vim for all vim configuration
+ln -sf ~/.vim ~/.config/nvim
+
 # Brew core
 brew update && \
   brew tap homebrew/cask && \
@@ -73,15 +76,15 @@ brew tap caskroom/fonts \
 
 # Python 2 and 3 via Pyenv with neovim completion enabled
 # Python --enable-framework is required for vim completion building
-export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang"
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv init -)" \
   && pyenv install 2.7.10 -s \
-  && pyenv install 3.5.0 -s \
-  && pyenv global 3.5.0 \
-  && pyenv shell 3.5.0 && pip install --upgrade pip && pip install --user neovim \
+  && pyenv install 3.7.3 -s \
+  && pyenv global 3.7.3 \
+  && pyenv shell 3.7.3 && pip install --upgrade pip && pip install --user neovim \
   && pyenv shell 2.7.10 && pip install --upgrade pip && pip install --user neovim \
-  && pyenv global 3.5.0 2.7.0
+  && pyenv global 3.7.3 2.7.0
 
 # NVM, Node, Yarn and neovimJS
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \

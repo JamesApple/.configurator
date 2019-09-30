@@ -54,7 +54,6 @@ alias mkdir='nocorrect mkdir -p'
 alias mv='nocorrect mv -i'
 
 
-
 if [ -n "$ZSH_VERSION" ]; then
   # Suffix aliases. 
   alias -s html=vim
